@@ -12,13 +12,13 @@ router.get("/", function (req, res) {
     if (err) return res.send(err);
 
     const context = { Curators: allCurators };
-    return res.render("Curators/index", context);
+    return res.render("curators/index", context);
   });
 });
 
 // New
 router.get("/new", function (req, res) {
-  res.render("Curator/new");
+  res.render("Curators/new");
 });
 
 // Show
