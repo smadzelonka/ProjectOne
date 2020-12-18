@@ -11,13 +11,13 @@ const app = express();
 // Configuration
 const PORT = 4001;
 
-app.search("view engine", "ejs");
+app.set("view engine", "ejs");
 
 // Middleware
 app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: true }));
 
-app.use(methoOverride("_method"));
+app.use(methodOverride("_method"));
 
 // Routes/controllers
 // home

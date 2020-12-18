@@ -23,7 +23,7 @@ router.get("/:id", async (req, res) => {
     const foundArtist = await db.Artist.findById(req.params.id).populate(
       "artists",
     );
-    const context = { gift: foundArtist };
+    const context = { artist: foundArtist };
     return res.render("artists/show", context); // adds gifts too show page "breakroom"
   } catch (err) {
     return res.send(err);
