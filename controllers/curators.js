@@ -6,90 +6,84 @@ const db = require("../models");
 /* ==== Routes ==== */
 
 // Index
-router.get("/", function(req,res){
-    // mongoose
-    db.Artist.find({}, function(err, allAuthors){
-  
-      if(err) return res.send(err);
-  
-      const context = {artists: allArtists}
-      return res.render("artists/index", context);
-  
-    });
-  
+router.get("/", function (req, res) {
+  // mongoose
+  db.Curator.find({}, function (err, allCurator) {
+    if (err) return res.send(err);
+
+    const context = { Curators: allCurators };
+    return res.render("Curators/index", context);
   });
+});
 
 // New
-router.get("/new", function(req,res){
-    res.render("artist/new");
-  });
+router.get("/new", function (req, res) {
+  res.render("Curator/new");
+});
 
 // Show
-router.get("/:id", function(req,res){
-
-    db.Artist
-    .findById(req.params.id)
-    .populate("artists")
+router.get("/:id", function (req, res) {
+  db.Curator.findById(req.params.id)
+    .populate("Curators")
     .exec(function (err, foundAuthor) {
       if (err) return res.send(err);
-      
-      const context = { artist: foundArtist };
-      return res.render("artists/show", context);
-    })
-  
-  });
+
+      const context = { curator: foundCurator };
+      return res.render("Curators/show", context);
+    });
+});
 
 // Create
-router.post("/", function(req,res){
-    db.Artist.create(req.body, function (err, createdArtist) {
-  
-      if (err) return res.send(err);
-      
-      return res.redirect("/artists");
-      
-    });
+router.post("/", function (req, res) {
+  db.Curator.create(req.body, function (err, createdCurator) {
+    if (err) return res.send(err);
+
+    return res.redirect("/curators");
   });
+});
 
 // Edit
-router.get("/:id/edit", function(req, res){
-    db.Artist.findById(req.params.id, function(err, foudArtist){
-        if (err) return res.send(err);
+router.get("/:id/edit", function (req, res) {
+  db.Curator.findById(req.params.id, function (err, foundCurator) {
+    if (err) return res.send(err);
 
-        const context ={artist: foundArtist};
-        return res.render("artists/edit", context);
-    });
+    const context = { curator: foundCurator };
+    return res.render("curators/edit", context);
+  });
 });
 
 // Update
-router.put("/:id", function(req,res){
-    db.Artist.findByIdAndUpdate(
-        req.params.id,
+router.put("/:id", function (req, res) {
+  db.Curator.findByIdAndUpdate(
+    req.params.id,
     {
-        $set{
-            ...req.body
-        },
+      $set: {
+        ...req.body,
+      },
     },
 
-    {new:true},
-    function (err, updatedArtist){
-        if (err) return res.send(err);
-        return res.redirect(`/artists/${updatedArtist._id}`);
-    }
-    );
+    { new: true },
+    function (err, updatedCurator) {
+      if (err) return res.send(err);
+      return res.redirect(`/curators/${updatedCurator._id}`);
+    },
+  );
 });
 
 // Delete
-router.delete("/:id", function(req,res){
-    db.Author.findByIdAndDelete(req.params.id, function (err, deletedAuthor) {
-      if (err) return res.send(err);
-  
-      db.Article.remove({author: deletedAuthor._id}, function(err, deletedArticles){
+router.delete("/:id", function (req, res) {
+  db.Curator.findByIdAndDelete(req.params.id, function (err, deletedCurator) {
+    if (err) return res.send(err);
+
+    db.Curator.remove(
+      { author: deletedCurator._id },
+      function (err, deletedCurators) {
         if (err) return res.send(err);
         return res.redirect("/authors");
-      });
-      
-    });
+      },
+    );
   });
+});
 
 /* export */
 module.exports = router;
