@@ -14,7 +14,7 @@ Weekend- Build schemes for Artists and Curators aka Models, Full functionality f
 Monday- Finish EJS CSS planning and designating, icebox decisions
 Tuesday- Ejs and CSS
 
-### WireFrames
+## WireFrames
 
 ![Log in](design/Window1.png)
 ![Search or Gallery](design/Window2.png)
