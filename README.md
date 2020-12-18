@@ -5,7 +5,7 @@ gallery. The can edit their gallery as they wish.
 
 We will be utilizing Mongodb, Mongoose, Express, EJS CSS, Javascript, HTML
 
-Sprints:
+## Sprints:
 
 Friday- MVC- reorginize folder structure and routes
 Friday-Planning for weekend, designate tasks/focus
@@ -14,6 +14,8 @@ Weekend- Build schemes for Artists and Curators aka Models, Full functionality f
 Monday- Finish EJS CSS planning and designating, icebox decisions
 Tuesday- Ejs and CSS
 
+### WireFrames
+
 ![Log in](design/Window1.png)
 ![Search or Gallery](design/Window2.png)
 ![Artist index](design/Window3.png)
@@ -21,3 +23,5 @@ Tuesday- Ejs and CSS
 ![Gallery version1](design/Window5.png)
 ![Gallery version2](design/Window6.png)
 ![Create artist](design/Window7.png)
+
+### ERD
