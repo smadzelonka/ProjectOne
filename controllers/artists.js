@@ -15,6 +15,8 @@ router.get("/", async (req, res) => {
     return res.send(err);
   }
 });
+// new
+
 // show
 router.get("/:id", async (req, res) => {
   try {
@@ -27,6 +29,13 @@ router.get("/:id", async (req, res) => {
     return res.send(err);
   }
 });
+// create --Post
+
+// edit
+
+// update
+
+// Delete
 
 /* export */
 module.exports = router;
