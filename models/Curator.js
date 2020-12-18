@@ -8,7 +8,7 @@ const curatorSchema = new mongoose.Schema(
             required: [true, "Name Required"],
         },
     
-        gallery: [{ type: mongoose.Schema.Types.ObjectId, ref: "Artists" }],
+        gallery: [{ type: mongoose.Schema.Types.ObjectId, ref: "Artist" }],
     },
     {
         timestamps:true,
