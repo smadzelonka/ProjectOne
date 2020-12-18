@@ -79,7 +79,7 @@ router.delete("/:id", function (req, res) {
       { author: deletedCurator._id },
       function (err, deletedCurators) {
         if (err) return res.send(err);
-        return res.redirect("/authors");
+        return res.redirect("/curators");
       },
     );
   });
