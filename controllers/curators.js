@@ -65,7 +65,7 @@ router.put("/:id", function(req,res){
     db.Artist.findByIdAndUpdate(
         req.params.id,
     {
-        $set{
+        $set:{
             ...req.body
         },
     },
@@ -80,12 +80,12 @@ router.put("/:id", function(req,res){
 
 // Delete
 router.delete("/:id", function(req,res){
-    db.Author.findByIdAndDelete(req.params.id, function (err, deletedAuthor) {
+    db.Artist.findByIdAndDelete(req.params.id, function (err, deletedArtists) {
       if (err) return res.send(err);
   
-      db.Article.remove({author: deletedAuthor._id}, function(err, deletedArticles){
+      db.Artist.remove({author: deletedArtist._id}, function(err, deletedArtists){
         if (err) return res.send(err);
-        return res.redirect("/authors");
+        return res.redirect("/artists");
       });
       
     });
