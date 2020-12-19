@@ -10,8 +10,7 @@ router.get("/", function (req, res) {
   // mongoose
   db.Curator.find({}, function (err, allCurators) {
     if (err) return res.send(err);
-
-    const context = { Curators: allCurators };
+    const context = { curators: allCurators };
     return res.render("curators/index", context);
   });
 });
@@ -34,7 +33,7 @@ router.get("/:id", function (req, res) {
     .exec(function (err, foundCurator) {
       if (err) return res.send(err);
 
-      const context = { curator: foundCurator };
+      const context = { curators: foundCurator };
       return res.render("curators/show", context);
     });
 });
