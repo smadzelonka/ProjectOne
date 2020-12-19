@@ -57,9 +57,11 @@ router.put("/:id", function (req, res) {
   db.Curator.findByIdAndUpdate(
     req.params.id,
     {
+
       $set: {
         ...req.body,
       },
+
     },
 
     { new: true },
@@ -71,15 +73,17 @@ router.put("/:id", function (req, res) {
 });
 
 // Delete
+
 router.delete("/:id", function (req, res) {
   db.Curator.findByIdAndDelete(req.params.id, function (err, deletedCurator) {
     if (err) return res.send(err);
 
     db.Curator.remove(
-      { author: deletedCurator._id },
-      function (err, deletedCurators) {
-        if (err) return res.send(err);
-        return res.redirect("/curators");
+      { curator: deletedCurator._id },
+      function (err, foundArtist) {
+         foundArtist.artists.remove(deletedCurator);
+          foundArtist.save();
+          return res.redirect("/curators")
       },
     );
   });
