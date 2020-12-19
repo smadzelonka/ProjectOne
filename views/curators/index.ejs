@@ -6,9 +6,10 @@
   <title>Document</title>
 </head>
 <body>
+  <!-- Navbar -->
   <nav>
-    <a href="/curators/index">Curator</a>
-    <a href="/artists/index">Artist</a>
+    <a href="/curators">Curator</a>
+    <a href="/artists">Artist</a>
     <a href="/curators/edit">Curator Edit</a>
     <a href="/artists/edit">Artist Edit</a>
     <a href="/curators/show">Curator Show</a>
@@ -16,5 +17,22 @@
     <a href="/curators/new">Curator New</a>
     <a href="/artists/new">Artist New</a>
   </nav>
+<!-- Header -->
+<h1>Curators Home page</h1>
+      <h2>List of Curators</h2>
+      
+      <% if(!curators.length) { %>
+        <p>There are no Curators available yet.</p>
+      <% } %>
+
+      <ul>
+        <% curators.forEach(curator => { %>
+        <li>
+          <a href="/curators/<%= curator._id %>"> <%= curator.name %> </a>
+        </li>
+        <% }) %>
+      </ul>
+
+
 </body>
 </html>
