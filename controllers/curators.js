@@ -19,7 +19,6 @@ router.get("/", function (req, res) {
 router.get("/new", function (req, res) {
   db.Curator.find({}, function (err, foundCurator) {
     if (err) return res.send(err);
-
     const context = {
       curator: foundCurator,
     };
