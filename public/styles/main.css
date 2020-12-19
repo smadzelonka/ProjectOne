@@ -8,8 +8,10 @@ body {
   text-align: center;
 }
 
-.emailContainer {
+.loginContainer {
+  position: relative;
   display: flex;
   align-self: center;
   justify-content: center;
+  /* max-width: 80%; */
 }

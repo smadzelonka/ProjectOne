@@ -16,6 +16,16 @@ router.get("/", async (req, res) => {
   }
 });
 // new
+router.get("/new", (req, res) => {
+  db.Artist.find({}, function (err, foundArtist) {
+    if (err) return res.send(err);
+
+    const context = {
+      artist: foundArtist,
+    };
+    res.render("artists/new", context);
+  });
+});
 
 // show
 router.get("/:id", async (req, res) => {
@@ -29,8 +39,15 @@ router.get("/:id", async (req, res) => {
     return res.send(err);
   }
 });
-// create --Post
-
+// Create
+router.post("/", async (req, res) => {
+  try {
+    await db.Artist.create(req.body);
+    return res.redirect("/artists");
+  } catch (err) {
+    return res.send(err);
+  }
+});
 // edit
 
 // update
