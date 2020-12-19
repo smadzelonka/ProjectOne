@@ -9,7 +9,7 @@ const db = require("../models");
 router.get("/", async (req, res) => {
   try {
     const allArtists = await db.Artist.find({});
-    const context = { artist: allArtists };
+    const context = { artists: allArtists };
     return res.render("artists/index", context);
   } catch (err) {
     return res.send(err);

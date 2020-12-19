@@ -31,9 +31,9 @@
     <input type="text" id="name" name="name" required
        minlength="4" maxlength="8"></input>
     <select gallery = "dropdown">
-       <option value = "Gallery One" selected><%=curator.gallery[name]%></option>
-       <option value = "Gallery Two" selected><%=curator.gallery[name]%></option>
-       <option value = "Gallery Three" selected><%=curator.gallery[name]%></option>
+       <option value = "Gallery One" selected><%=curator.gallery.name%></option>
+       <option value = "Gallery Two" selected><%=curator.gallery.name%></option>
+       <option value = "Gallery Three" selected><%=curator.gallery.name%></option>
        <input type="submit" value= "Submit"> </input>
       </select>
 
