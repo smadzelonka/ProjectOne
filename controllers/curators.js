@@ -8,11 +8,11 @@ const db = require("../models");
 // Index
 router.get("/", function (req, res) {
   // mongoose
-  db.Curator.find({}, function (err, allCurator) {
+  db.Curator.find({}, function (err, allCurators) {
     if (err) return res.send(err);
 
     const context = { Curators: allCurators };
-    return res.render("curators/index", context);
+    return res.render("/curators/index", context);
   });
 });
 
