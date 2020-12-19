@@ -8,8 +8,8 @@ const db = require("../models");
 // index
 router.get("/", async (req, res) => {
   try {
-    const allArtist = await db.Artist.find({});
-    const context = { artist: allArtist };
+    const allArtists = await db.Artist.find({});
+    const context = { artist: allArtists };
     return res.render("artists/index", context);
   } catch (err) {
     return res.send(err);

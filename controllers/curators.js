@@ -12,7 +12,7 @@ router.get("/", function (req, res) {
     if (err) return res.send(err);
 
     const context = { Curators: allCurators };
-    return res.render("/curators/index", context);
+    return res.render("curators/index", context);
   });
 });
 
@@ -30,12 +30,12 @@ router.get("/new", function (req, res) {
 // Show
 router.get("/:id", function (req, res) {
   db.Curator.findById(req.params.id)
-    .populate("Curators")
-    .exec(function (err, foundAuthor) {
+    .populate("artists")
+    .exec(function (err, foundCurator) {
       if (err) return res.send(err);
 
       const context = { curator: foundCurator };
-      return res.render("Curators/show", context);
+      return res.render("curators/show", context);
     });
 });
 
@@ -63,11 +63,9 @@ router.put("/:id", function (req, res) {
   db.Curator.findByIdAndUpdate(
     req.params.id,
     {
-
       $set: {
         ...req.body,
       },
-
     },
 
     { new: true },
@@ -87,9 +85,9 @@ router.delete("/:id", function (req, res) {
     db.Curator.remove(
       { curator: deletedCurator._id },
       function (err, foundArtist) {
-         foundArtist.artists.remove(deletedCurator);
-          foundArtist.save();
-          return res.redirect("/curators")
+        foundArtist.artists.remove(deletedCurator);
+        foundArtist.save();
+        return res.redirect("/curators");
       },
     );
   });
