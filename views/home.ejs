@@ -1,24 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home page</title>
-</head>
-<body>
+<!-- Boiler plate -->
+<%- include("partials/header") %>
+
   <nav> 
     <p>
-      <a href="/curators/index">Curator</a>
-      <a href="/artists/index">Artist</a>
-      <a href="/curators/edit">Curator Edit</a>
-      <a href="/artists/edit">Artist Edit</a>
-      <a href="/curators/show">Curator Show</a>
-      <a href="/artists/show">Artist Show</a>
-      <a href="/curators/new">Curator New</a>
-      <a href="/artists/new">Artist New</a>
+      <a href="/curators">Curator</a>
+      <a href="/artists">Artist</a>
     </p>
   </nav>
   <h1>Home page</h1>
-  
-</body>
-</html>
+  <!-- Login -->
+  <container class="emailContainer">
+    <div class="ui left icon input">
+      <input type="text" placeholder="Email">
+        <i class="user icon"></i>
+    </div>
+    <div class="ui left icon input">
+      <input type="text" placeholder="Password">
+        <i class="unlock icon"></i>
+    </div>
+<!--     <h2>Or</h2> -->
+    <div>
+      <!-- log in with google -->
+      <!-- log in facebook -->
+    </div>
+</container>
+
+<!-- Boiler plate -->
+<%- include("partials/footer") %>
