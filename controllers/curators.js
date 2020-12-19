@@ -18,7 +18,13 @@ router.get("/", function (req, res) {
 
 // New
 router.get("/new", function (req, res) {
-  res.render("Curators/new");
+  db.Curator.find({}, function (err, foundCurator) {
+    if (err) return res.send(err);
+    const context = {
+      curator: foundCurator,
+    };
+    res.render("curators/new", context);
+  });
 });
 
 // Show
