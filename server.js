@@ -1,6 +1,7 @@
 // external modules
 const express = require("express");
 const methodOverride = require("method-override");
+const multer = require("multer");
 
 // internal modules
 const controllers = require("./controllers");

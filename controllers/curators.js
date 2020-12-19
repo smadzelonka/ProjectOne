@@ -10,7 +10,6 @@ router.get("/", function (req, res) {
   // mongoose
   db.Curator.find({}, function (err, allCurators) {
     if (err) return res.send(err);
-
     const context = { curators: allCurators };
     return res.render("curators/index", context);
   });
