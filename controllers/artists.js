@@ -34,7 +34,7 @@ router.get("/:id", async (req, res) => {
       "artists",
     );
     const context = { artist: foundArtist };
-    return res.render("artists/show", context); // adds gifts too show page "breakroom"
+    return res.render("artists/show", context); 
   } catch (err) {
     return res.send(err);
   }
@@ -49,6 +49,14 @@ router.post("/", async (req, res) => {
   }
 });
 // edit
+router.get("/:id/edit", function (req, res) {
+  db.Artist.findById(req.params.id, function (err, foundArtist) {
+    if (err) return res.send(err);
+
+    const context = { curator: foundArtist };
+    return res.render("artists/edit", context);
+  });
+});
 
 // update
 
