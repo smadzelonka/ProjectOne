@@ -59,6 +59,22 @@ router.get("/:id/edit", function (req, res) {
 });
 
 // update
+router.put("/:id", function (req, res) {
+  db.Artist.findByIdAndUpdate(
+    req.params.id,
+    {
+      $set: {
+        ...req.body,
+      },
+    },
+
+    { new: true },
+    function (err, updatedArtist) {
+      if (err) return res.send(err);
+      return res.redirect(`/artists/${updatedArtist._id}`);
+    },
+  );
+});
 
 // Delete
 
