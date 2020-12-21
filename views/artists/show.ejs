@@ -3,14 +3,13 @@
     <nav>
     <a href="/curators">Curator</a>|
     <a href="/artists">Artist</a>|
-    <a href="/curators/edit">Curator Edit</a>|
-    <a href="/artists/edit">Artist Edit</a>|
-    <a href="/curators/show">Curator Show</a>|
-    <a href="/artists/show">Artist Show</a>|
     <a href="/curators/new">Curator New</a>|
     <a href="/artists/new">Artist New</a>
   </nav>
   <h1>Artist home</h1>
+  <%=artist.bio%> 
+  <%=artist.url%> 
+  <button><a href="/artists/<%= artist._id %>/edit">Edit</a></button>
   
 <!-- Boiler plate -->
 <%- include("../partials/footer") %>
