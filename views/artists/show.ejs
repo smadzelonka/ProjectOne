@@ -1,15 +1,11 @@
 <!-- Boiler plate -->
 <%- include("../partials/header") %>
-    <nav>
-    <a href="/curators">Curator</a>|
-    <a href="/artists">Artist</a>|
-    <a href="/curators/new">Curator New</a>|
-    <a href="/artists/new">Artist New</a>
-  </nav>
-  <h1>Artist home</h1>
+<!-- Nav Bar -->
+<%- include("../partials/nav") %>
+<!-- Body -->
+<h1>Artist's show page</h1>
   <%=artist.bio%> 
   <%=artist.url%> 
   <button><a href="/artists/<%= artist._id %>/edit">Edit</a></button>
-  
 <!-- Boiler plate -->
 <%- include("../partials/footer") %>
