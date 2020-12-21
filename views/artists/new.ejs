@@ -7,9 +7,17 @@
   <!-- Farther research is needed on to proceed with two forms -->
   <!-- This was helped by traversy media via youtube -->
   <!-- form1 -->
-  <form action="/artists" method="POST">
+  <form action="/artists" method="POST" enctype="multipart/form-data">
     <p>
-      <input type="text" name="name" placeholder="Li mike" />
+    <select name ='name'>
+          <option default>Select an Curator</option>
+         <% curator.forEach ( curator => { %>
+          <option value="<%= curator._id %>">
+            <%= curator.name %>
+          </option>
+         <% }) %>
+        </select>
+
     </p>
     <p>
       <textarea type="text" name="bio" placeholder="Spacejam 2020"></textarea>
@@ -29,7 +37,7 @@
       <div class="col-md-6">
         <h2 class="artworkUpload">Upload Art</h2>
         <!-- form data -->
-        <form action="/" method="POST" enctype="multipart/form-data">
+        <!-- <form action="/" method="POST" enctype="multipart/form-data"> -->
           <div class="custom-file ">
             <input type="file" name="file" id="file" class="custom-file-input">
           </div>

@@ -19,11 +19,10 @@ router.get("/", async (req, res) => {
 });
 // new
 router.get("/new", (req, res) => {
-  db.Artist.find({}, function (err, foundArtist) {
+  db.Curator.find({}, function (err, foundCurator) {
     if (err) return res.send(err);
-
     const context = {
-      artist: foundArtist,
+      curator: foundCurator,
     };
     res.render("artists/new", context);
   });
@@ -42,18 +41,39 @@ router.get("/:id", async (req, res) => {
   }
 });
 // Create
-router.post(
-  "/",
-  /* upload.single("file"), */ async (req, res) => {
-    // console.log(req.file);
-    try {
-      await db.Artist.create(req.body);
+
+router.post("/", function (req, res) {
+  db.Artist.create(req.body, function (err, createdArtist) {
+    if (err) return res.send(err);
+    db.Curator.findById(createdArtist.curator).exec(function (
+      err,
+      foundCurator,
+    ) {
+      if (err) return res.send(err);
+      foundCurator.gallery.push(createdArtist);
+      foundCurator.save();
       return res.redirect("/artists");
-    } catch (err) {
-      return res.send(err);
-    }
-  },
-);
+    });
+  });
+});
+
+// router.post(
+//   "/",
+//   /* upload.single("file"), */ async (req, res) => {
+//     // console.log(req.file);
+//     try {
+//       await db.Artist.create(req.body, (err, createdArtist) => {
+//         db.Curator.findById(createdArtist.curator).exec((err, foundCurator) => {
+//           foundCurator.gallery.push(createdArtist);
+//           foundCurator.save();
+//         });
+//       });
+//       return res.redirect("/artists");
+//     } catch (err) {
+//       return res.send(err);
+//     }
+//   },
+// );
 // edit
 router.get("/:id/edit", function (req, res) {
   db.Artist.findById(req.params.id, function (err, foundArtist) {
@@ -86,7 +106,7 @@ router.put("/:id", function (req, res) {
 router.delete("/:id", async (req, res) => {
   try {
     const deletedArtist = await db.Artist.findByIdAndDelete(req.params.id);
-    await db.Artist.remove({artist: deletedArtist._id});
+    await db.Artist.remove({ artist: deletedArtist._id });
     return res.redirect("/artists");
   } catch (err) {
     return res.send(err);
