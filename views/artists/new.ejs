@@ -8,8 +8,9 @@
   <!-- This was helped by traversy media via youtube -->
   <!-- form1 -->
   <form action="/artists" method="POST">
+    <input type="text" name="name" placeholder="Name">
     <p>
-    <select name ='name'>
+    <select name ='gallery'>
           <option default>Select an Curator</option>
          <% curator.forEach ( curator => { %>
           <option value="<%= curator._id %>">
