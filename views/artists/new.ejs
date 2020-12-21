@@ -8,8 +8,17 @@
   <!-- This was helped by traversy media via youtube -->
   <!-- form1 -->
   <form action="/artists" method="POST">
+    <input type="text" name="name" placeholder="Name">
     <p>
-      <input type="text" name="name" placeholder="Li mike" />
+    <select name ='gallery'>
+          <option default>Select an Curator</option>
+         <% curator.forEach ( curator => { %>
+          <option value="<%= curator._id %>">
+            <%= curator.user %>
+          </option>
+         <% }) %>
+        </select>
+
     </p>
     <p>
       <textarea type="text" name="bio" placeholder="Spacejam 2020"></textarea>

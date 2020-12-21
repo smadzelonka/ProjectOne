@@ -4,7 +4,8 @@
 <%- include("../partials/nav") %>
 <!-- Body -->
 <h1>Artist's show page</h1>
-  <%=artist.bio%> 
+  <%= artist.name %>| 
+  <%=artist.bio%> |
   <%=artist.url%> 
   <button><a href="/artists/<%= artist._id %>/edit">Edit</a></button>
 
