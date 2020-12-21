@@ -83,12 +83,13 @@ router.put("/:id", function (req, res) {
 });
 
 // Delete
-router.delete("/", async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
     const deletedArtist = await db.Artist.findByIdAndDelete(req.params.id);
+    await db.Artist.remove({artist: deletedArtist._id});
     return res.redirect("/artists");
   } catch (err) {
-    res.send(err);
+    return res.send(err);
   }
 });
 
