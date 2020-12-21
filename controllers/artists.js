@@ -2,7 +2,9 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
-
+/* imgs hope */
+const multer = require("multer");
+const upload = multer({ dest: "uploads/" });
 /* ==== Routes ==== */
 
 // index
@@ -34,13 +36,14 @@ router.get("/:id", async (req, res) => {
       "artists",
     );
     const context = { artist: foundArtist };
-    return res.render("artists/show", context); 
+    return res.render("artists/show", context);
   } catch (err) {
     return res.send(err);
   }
 });
 // Create
-router.post("/", async (req, res) => {
+router.post("/", upload.single("file"), async (req, res) => {
+  console.log(req.file);
   try {
     await db.Artist.create(req.body);
     return res.redirect("/artists");
