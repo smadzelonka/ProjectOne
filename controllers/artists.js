@@ -49,14 +49,8 @@ router.post("/", async (req, res) => {
   }
 });
 // edit
-router.get("/:id/edit", (req, res) => {
-  res.send("Edit Form");
-});
 
 // update
-router.put("/:id", (req, res) => {
-  res.send({ id: req.params.id, body: req.body });
-});
 
 // Delete
 router.delete("/", async (req, res) => {
