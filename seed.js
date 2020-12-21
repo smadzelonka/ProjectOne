@@ -9,12 +9,14 @@ const db = require("./models");
 //   process.exit();
 // });
 
-
-db.Curator.create({ name: "Barbara Thompson", gallery: "5fde4270513672090d7b35dd"}, function (err, createdCurator) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log(createdCurator);
-  }
-  process.exit();
-});
+db.Curator.create(
+  { name: "Barbara Thompson", gallery: ["5fde4270513672090d7b35dd"] },
+  function (err, createdCurator) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(createdCurator);
+    }
+    process.exit();
+  },
+);

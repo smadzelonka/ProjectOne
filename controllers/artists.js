@@ -45,7 +45,7 @@ router.get("/:id", async (req, res) => {
 router.post("/", function (req, res) {
   db.Artist.create(req.body, function (err, createdArtist) {
     if (err) return res.send(err);
-    db.Curator.findById(createdArtist.curator).exec(function (
+    db.Curator.findById(createdArtist.artCollection).exec(function (
       err,
       foundCurator,
     ) {
@@ -57,23 +57,6 @@ router.post("/", function (req, res) {
   });
 });
 
-// router.post(
-//   "/",
-//   /* upload.single("file"), */ async (req, res) => {
-//     // console.log(req.file);
-//     try {
-//       await db.Artist.create(req.body, (err, createdArtist) => {
-//         db.Curator.findById(createdArtist.curator).exec((err, foundCurator) => {
-//           foundCurator.gallery.push(createdArtist);
-//           foundCurator.save();
-//         });
-//       });
-//       return res.redirect("/artists");
-//     } catch (err) {
-//       return res.send(err);
-//     }
-//   },
-// );
 // edit
 router.get("/:id/edit", function (req, res) {
   db.Artist.findById(req.params.id, function (err, foundArtist) {
