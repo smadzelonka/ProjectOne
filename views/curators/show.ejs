@@ -1,9 +1,11 @@
 
+
 <!-- Boiler plate -->
 <%- include("../partials/header") %>
 <!-- Nav Bar -->
 <%- include("../partials/nav") %>
 <!-- Body -->
+
 <h1><%= curators.name %>'s show page</h1>
     <% curators.gallery.forEach(artist => { %>
       <a href="/artists/<%= artist._id %>"> <%= artist.name %> </a>
@@ -22,6 +24,7 @@
 </div>
 
   </form>  
+
 <!-- Boiler plate -->
 <%- include("../partials/footer") %>
 

@@ -7,5 +7,18 @@
   <%=artist.bio%> 
   <%=artist.url%> 
   <button><a href="/artists/<%= artist._id %>/edit">Edit</a></button>
+
+  <form action="/artists/<%= artist._id %>?_method=DELETE" method="POST">
+    <div class="ui animated button"  tabindex="0">
+  <div class="visible content">
+    <!-- Delete -->
+    <input class="deleteButton" type="submit" value="Delete">
+  </div>
+  <div type="submit" class="hidden content">
+    <input class="deleteButton" type="submit"> <i class="trash alternate icon"></i></input>
+  </div>
+</div>
+
+  </form>  
 <!-- Boiler plate -->
 <%- include("../partials/footer") %>
