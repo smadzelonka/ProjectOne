@@ -42,15 +42,18 @@ router.get("/:id", async (req, res) => {
   }
 });
 // Create
-router.post("/", upload.single("file"), async (req, res) => {
-  console.log(req.file);
-  try {
-    await db.Artist.create(req.body);
-    return res.redirect("/artists");
-  } catch (err) {
-    return res.send(err);
-  }
-});
+router.post(
+  "/",
+  /* upload.single("file"), */ async (req, res) => {
+    // console.log(req.file);
+    try {
+      await db.Artist.create(req.body);
+      return res.redirect("/artists");
+    } catch (err) {
+      return res.send(err);
+    }
+  },
+);
 // edit
 router.get("/:id/edit", function (req, res) {
   db.Artist.findById(req.params.id, function (err, foundArtist) {
