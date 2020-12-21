@@ -4,8 +4,21 @@
 <!-- Nav Bar -->
 <%- include("../partials/nav") %>
 <!-- Body -->
-<h1>Curator Show page</h1>
-<a href="/curators/<%= curators._id %>/edit">Edit me</a> 
+<h1><%= curators.name %>'s show page</h1>
+
+<a href="/curators/<%= curators._id %>/edit">Edit me</a>
+  <form action="/curators/<%= curators._id %>?_method=DELETE" method="POST">
+    <div class="ui animated button"  tabindex="0">
+  <div class="visible content">
+    <!-- Delete -->
+    <input class="deleteButton" type="submit" value="Delete">
+  </div>
+  <div type="submit" class="hidden content">
+    <input class="deleteButton" type="submit"> <i class="trash alternate icon"></i></input>
+  </div>
+</div>
+
+  </form>  
 <!-- Boiler plate -->
 <%- include("../partials/footer") %>
 
