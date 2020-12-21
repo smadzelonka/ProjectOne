@@ -34,6 +34,7 @@ router.get("/new", function (req, res) {
 router.get("/:id", function (req, res) {
   db.Curator.findById(req.params.id)
     .populate("gallery")
+
     .exec(function (err, foundCurator) {
       if (err) return res.send(err);
 

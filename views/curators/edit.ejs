@@ -7,9 +7,10 @@
 <form action="/curators/<%= curator._id %>?_method=PUT" method="POST">
   <input type="text" id="name" name="name" minlength="4" maxlength="8"></input>
     <select gallery = "dropdown">
-      <option value = "Gallery One" selected><%=curator.gallery.name%></option>
-      <option value = "Gallery Two" selected><%=curator.gallery.name%></option>
-      <option value = "Gallery Three" selected><%=curator.gallery.name%></option>
+
+    <% curators.gallery.forEach(artist => { %>
+      <option value="<%= artist._id %>"><%= artist.name %> </option>
+    <% }) %
       <input type="submit" value= "Submit"> </input>
       </select>
 </form>
