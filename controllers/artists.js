@@ -33,7 +33,7 @@ router.get("/new", (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const foundArtist = await db.Artist.findById(req.params.id).populate(
-      "artists",
+      "curator",
     );
     const context = { artist: foundArtist };
     return res.render("artists/show", context);
