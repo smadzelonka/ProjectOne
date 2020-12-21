@@ -81,8 +81,16 @@ router.put("/:id", function (req, res) {
 });
 
 // Delete
-
-router.delete("/:id", function (req, res) {
+router.delete("/:id", async function (req, res) {
+  try {
+    const deletedCurator = await db.Curator.findByIdAndDelete(req.params.id);
+    await db.Curator.remove({ curator: deletedCurator._id });
+    return res.redirect("/curators");
+  } catch (err) {
+    return res.send(err);
+  }
+});
+/* router.delete("/:id", function (req, res) {
   db.Curator.findByIdAndDelete(req.params.id, function (err, deletedCurator) {
     if (err) return res.send(err);
 
@@ -95,7 +103,7 @@ router.delete("/:id", function (req, res) {
       },
     );
   });
-});
+}); */
 
 /* export */
 module.exports = router;
