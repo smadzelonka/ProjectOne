@@ -3,6 +3,18 @@
 <!-- Nav Bar -->
 <%- include("../partials/nav") %>
   <h1>Artist index page</h1>
+  <% if(!artists.length) { %>
+    <p>There are no Artists available yet.</p>
+  <% } %>
+
+  <ul>
+    <% artists.forEach(artist => { %>
+    <li>
+      <a href="/artists/<%= artist._id %>"> <%= artist.name %> </a>|
+      <a href="<%= artist.url %>">Link here</a>
+    </li>
+    <% }) %>
+  </ul>
   
 <!-- Boiler plate -->
 <%- include("../partials/footer") %>
