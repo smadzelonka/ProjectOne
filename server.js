@@ -1,7 +1,6 @@
 // external modules
 const express = require("express");
 const methodOverride = require("method-override");
-const multer = require("multer");
 
 // internal modules
 const controllers = require("./controllers");
@@ -17,7 +16,6 @@ app.set("view engine", "ejs");
 // Middleware
 app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: true }));
-
 app.use(methodOverride("_method"));
 
 // Routes/controllers

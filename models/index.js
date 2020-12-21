@@ -23,6 +23,8 @@ mongoose.connection.on("disconnected", function () {
   console.log("Mongodb disconnected");
 });
 
+/* ===== export ===== */
+
 module.exports = {
   Artist: require("./Artist"),
   Curator: require("./Curator"),

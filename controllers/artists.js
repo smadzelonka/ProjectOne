@@ -49,10 +49,24 @@ router.post("/", async (req, res) => {
   }
 });
 // edit
+router.get("/:id/edit", (req, res) => {
+  res.send("Edit Form");
+});
 
 // update
+router.put("/:id", (req, res) => {
+  res.send({ id: req.params.id, body: req.body });
+});
 
 // Delete
+router.delete("/", async (req, res) => {
+  try {
+    const deletedArtist = await db.Artist.findByIdAndDelete(req.params.id);
+    return res.redirect("/artists");
+  } catch (err) {
+    res.send(err);
+  }
+});
 
 /* export */
 module.exports = router;
