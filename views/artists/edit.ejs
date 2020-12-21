@@ -3,8 +3,8 @@
 
 <!-- Nav Bar -->
 <%- include("../partials/nav") %>
-  <form action="/artists/<%= artist._id %>?_method=PUT" method="POST">
 
+  <form action="/artists/<%= artists._id %>?_method=PUT" method="POST">
     <input type="text" id="name" name="name" required
        minlength="4" maxlength="8"></input>
     <input type="url" id="link" name="website" required></input>
