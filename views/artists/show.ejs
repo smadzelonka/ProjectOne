@@ -4,9 +4,6 @@
 <%- include("../partials/nav") %>
 <!-- Body -->
 <h1>Artist's show page</h1>
-  <% if(!artist.length) { %>
-    <p>There are no Artists available yet.</p>
-  <% } %>
   <%=artist.bio%> 
   <%=artist.url%> 
   <button><a href="/artists/<%= artist._id %>/edit">Edit</a></button>
