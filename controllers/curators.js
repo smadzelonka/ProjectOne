@@ -17,14 +17,18 @@ router.get("/", function (req, res) {
 
 // New
 router.get("/new", function (req, res) {
-  db.Curator.find({}, function (err, foundCurator) {
+  res.render("curators/new");
+});
+// old new
+/* router.get("/new", function (req, res) {
+  db.Curator.find({}, function (err, foundCurator) {rs
     if (err) return res.send(err);
     const context = {
       curator: foundCurator,
     };
     res.render("curators/new", context);
   });
-});
+}); */
 
 // Show
 router.get("/:id", function (req, res) {
@@ -39,12 +43,13 @@ router.get("/:id", function (req, res) {
 });
 
 // Create
-router.post("/", function (req, res) {
-  db.Curator.create(req.body, function (err, createdCurator) {
-    if (err) return res.send(err);
-
+router.post("/", async function (req, res) {
+  try {
+    await db.Curator.create(req.body);
     return res.redirect("/curators");
-  });
+  } catch (err) {
+    return res.send(err);
+  }
 });
 
 // Edit

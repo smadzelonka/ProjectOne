@@ -4,5 +4,9 @@
 <%- include("../partials/nav") %>
 <!-- Body -->
 <h1>Curator New page</h1>
+  <form action="/Curators" method="POST">
+    <input type="text" name="name" placeholder="Curator Name" />
+    <input type="submit" value="Create">
+  </form>
 <!-- Boiler plate -->
 <%- include("../partials/footer") %>
