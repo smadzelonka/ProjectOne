@@ -19,16 +19,6 @@ router.get("/", function (req, res) {
 router.get("/new", function (req, res) {
   res.render("curators/new");
 });
-// old new
-/* router.get("/new", function (req, res) {
-  db.Curator.find({}, function (err, foundCurator) {rs
-    if (err) return res.send(err);
-    const context = {
-      curator: foundCurator,
-    };
-    res.render("curators/new", context);
-  });
-}); */
 
 // Show
 router.get("/:id", function (req, res) {
@@ -90,20 +80,6 @@ router.delete("/:id", async function (req, res) {
     return res.send(err);
   }
 });
-/* router.delete("/:id", function (req, res) {
-  db.Curator.findByIdAndDelete(req.params.id, function (err, deletedCurator) {
-    if (err) return res.send(err);
-
-    db.Curator.remove(
-      { curator: deletedCurator._id },
-      function (err, foundArtist) {
-        foundArtist.artists.remove(deletedCurator);
-        foundArtist.save();
-        return res.redirect("/curators");
-      },
-    );
-  });
-}); */
 
 /* export */
 module.exports = router;
