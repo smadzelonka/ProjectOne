@@ -28,10 +28,10 @@
     <input type="text" name="artwork" placeholder="Url of Artwork">
   </div>
       <p>
-    <!-- <select name ='artCollection'> -->
+    <!-- <select name ='artCollection'>  -->
 <div class="ui form">
   <div class="field">
-    <select>
+    <select name="artCollection">
       <option default>Select an Curator</option>
       <% curator.forEach ( curator => { %>
       <option value="<%= curator._id %>">
@@ -76,4 +76,4 @@
       bio: { type: String, required: true },
       url: { type: String, required: true },
       artwork: { type: String, required: true } /* Img url? */,
-      gallery: { type: mongoose.Schema.Types.ObjectId, ref: "Curator" }, -->
+      gallery: { type: mongoose.Schema.Types.ObjectId, ref: "Curator" }
