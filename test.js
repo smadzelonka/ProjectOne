@@ -55,35 +55,34 @@ conn.once("open", function () {
 }); */
 
 /* ========================Show page curator======================== */
-{
-  /* <h1><%= curators.user %>'s show page</h1>
-    <% curators.gallery.forEach(artist => { %>
-      <div class="ui special cards">
-        <div class="card">
-          <div class="blurring dimmable image">
-            <div class="ui dimmer <!-- special cards -->">
-              <div class="content">
-                <div class="center">
-                  <div class="ui inverted button">Add Friend</div>
-                </div>
-              </div>
-            </div>
-            <img src="<%= artist.artwork %>">
-          </div>
-          <div class="content">
-            <a class="header"><%= artist.name %> </a>
-            <div class="meta">
-              <span class="date"><%= artist.bio %>  </span>
-            </div>
-          </div>
-          <div class="extra content">
-            <a>
-              <i class="users icon"></i>
-              <a href="<%= artist.url %>"><%= artist.name %>'s website </a>
-            </a>
-          </div>
-        </div>
-      </div>
-    
-      <% }) %></div> */
-}
+
+// <h1><%= curators.user %>'s show page</h1>
+//   <% curators.gallery.forEach(artist => { %>
+//     <div class="ui special cards">
+//       <div class="card">
+//         <div class="blurring dimmable image">
+//           <div class="ui dimmer <!-- special cards -->">
+//             <div class="content">
+//               <div class="center">
+//                 <div class="ui inverted button">Add Friend</div>
+//               </div>
+//             </div>
+//           </div>
+//           <img src="<%= artist.artwork %>">
+//         </div>
+//         <div class="content">
+//           <a class="header"><%= artist.name %> </a>
+//           <div class="meta">
+//             <span class="date"><%= artist.bio %>  </span>
+//           </div>
+//         </div>
+//         <div class="extra content">
+//           <a>
+//             <i class="users icon"></i>
+//             <a href="<%= artist.url %>"><%= artist.name %>'s website </a>
+//           </a>
+//         </div>
+//       </div>
+//     </div>
+
+//     <% }) %></div>
