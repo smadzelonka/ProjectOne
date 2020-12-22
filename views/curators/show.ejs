@@ -3,44 +3,34 @@
 <!-- Nav Bar -->
 <%- include("../partials/nav") %>
 <!-- Body -->
+<h1>Gallery Name</h1>
 
-<h1><%= curators.user %>'s show page</h1>
-    <% curators.gallery.forEach(artist => { %>
-      <a href="/artists/<%= artist._id %>"> <%= artist.name %> </a>
-    <% }) %>
-<div class="ui special cards">
-  <div class="card">
-    <div class="blurring dimmable image">
-      <div class="ui dimmer">
-        <div class="content">
-          <div class="center">
-            <div class="ui inverted button">Add Friend</div>
-          </div>
+    <div class="ui card">
+      <div class="image">
+        <!-- image artwork -->
+        <img src="/images/avatar2/large/kristy.png"> 
+      </div>
+      <div class="content">
+        <a class="header"> <% curators.gallery.forEach(artist => { %>
+          <a href="/artists/<%= artist._id %>"> <%= artist.name %> </a>
+        <% }) %></a>
+        <div class="meta">
+          <span class="date">nothing yet</span>
+        </div>
+        <div class="description">
+          <% curators.gallery.forEach(artist => { %>
+            <span class="bio"><%= artist.bio %></span>
+          <% }) %></a>
         </div>
       </div>
-      <img src="/images/avatar/large/elliot.jpg">
-    </div>
-    <div class="content">
-      <a class="header">Team Fu</a>
-      <div class="meta">
-        <span class="date">Created in Sep 2014</span>
+      <div class="extra content">
+        <a>
+          <i class="user icon"></i>
+          nothing yet
+        </a>
       </div>
-    </div>
-    <div class="extra content">
-      <a>
-        <i class="users icon"></i>
-        2 Members
-      </a>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
+    </div> 
+    
 
 <!-- Editing -->
 <a href="/curators/<%= curators._id %>/edit">Edit me</a>
