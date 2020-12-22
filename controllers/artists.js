@@ -45,15 +45,11 @@ router.get("/:id", async (req, res) => {
 router.post("/", function (req, res) {
   db.Artist.create(req.body, function (err, createdArtist) {
     if (err) return res.send(err);
-    console.log(createdArtist);
     db.Curator.findById(createdArtist.artCollection).exec(function (
       err,
       foundCurator,
     ) {
       if (err) return res.send(err);
-      console.log(createdArtist);
-      console.log(foundCurator);
-      console.log(foundCurator.artCollection);
       foundCurator.gallery.push(createdArtist); /* to where */
       foundCurator.save();
       return res.redirect("/artists");
