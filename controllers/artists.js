@@ -52,7 +52,7 @@ router.post("/", function (req, res) {
       if (err) return res.send(err);
       foundCurator.gallery.push(createdArtist); /* to where */
       foundCurator.save();
-      return res.redirect("/artists");
+      return res.redirect("/curators/");
     });
   });
 });
