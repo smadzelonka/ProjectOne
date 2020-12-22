@@ -10,7 +10,7 @@
   <form action="/artists" method="POST">
     <input type="text" name="name" placeholder="Name">
     <p>
-    <select name ='gallery'>
+    <select name ='artCollection'>
           <option default>Select an Curator</option>
          <% curator.forEach ( curator => { %>
           <option value="<%= curator._id %>">
@@ -33,24 +33,26 @@
     url: { type: String, required: true },
     artwork: { type: String, required: true } /* Img url? */,
     gallery: { type: mongoose.Schema.Types.ObjectId, ref: "Curator" }, -->
-  <div class="containter" >
+
+
+  <!-- <div class="containter" >
     <div class="row">
       <div class="col-md-6">
-        <h2 class="artworkUpload">Upload Art</h2>
+        <h2 class="artworkUpload">Upload Art</h2> -->
         <!-- form data -->
-        <form action="/" method="POST" enctype="multipart/form-data">
+        <!-- <form action="/" method="POST" enctype="multipart/form-data">
           <div class="custom-file ">
             <input type="file" name="file" id="file" class="custom-file-input">
-          </div>
+          </div> -->
           <!-- injecting  -->
-          <p>
+          <!-- <p>
             <input type="text" name="gallery" placeholder="gallery" />
           </p>
           <input type="submit" value="submit" class="ui secondary button">
         </form>
       </div>
     </div>
-  </div>
+  </div> -->
   
 <!-- Boiler plate -->
 <%- include("../partials/footer") %>
