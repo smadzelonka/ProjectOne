@@ -4,10 +4,14 @@
 <%- include("../partials/nav") %>
 <!-- Body -->
 
+
+
+
 <h1>Gallery Name</h1>
     <% curators.gallery.forEach(artist => { %>
       <a href="/artists/<%= artist._id %>"> <%= artist.name %> </a>
     <% }) %>
+
 
 
 <!-- Editing -->
