@@ -6,7 +6,7 @@
 <h1>Artist's show page</h1>
   <%= artist.name %>| 
   <%=artist.bio%> |
-  <%=artist.url%> 
+  <a href="<%= artist.url %>">Website</a>
   <button><a href="/artists/<%= artist._id %>/edit">Edit</a></button>
 
   <form action="/artists/<%= artist._id %>?_method=DELETE" method="POST">
