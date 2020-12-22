@@ -12,11 +12,11 @@ body {
 }
 
 h1 {
-  color: #3a4b66;
+  color: #4183c4;
   font-family: "Lora", serif;
 }
 h2 {
-  color: #3a4b66;
+  color:#4183c4;
   font-family: "Lora", serif;
 }
 .artistForm {
@@ -50,6 +50,8 @@ h2 {
   justify-content: center;
   /* max-width: 80%; */
 }
+
+
 div {
   align-self: center;
 }
