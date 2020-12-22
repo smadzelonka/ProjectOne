@@ -6,35 +6,35 @@
 
 <h1><%= curators.user %>'s show page</h1>
     <% curators.gallery.forEach(artist => { %>
-      <a href="/artists/<%= artist._id %>"> <%= artist.name %> </a>
-    <% }) %>
-<div class="ui special cards">
-  <div class="card">
-    <div class="blurring dimmable image">
-      <div class="ui dimmer">
-        <div class="content">
-          <div class="center">
-            <div class="ui inverted button">Add Friend</div>
+      <div class="ui special cards">
+        <div class="card">
+          <div class="blurring dimmable image">
+            <div class="ui dimmer">
+              <div class="content">
+                <div class="center">
+                  <div class="ui inverted button">Add Friend</div>
+                </div>
+              </div>
+            </div>
+            <img src="<%= artist.artwork %>">
+          </div>
+          <div class="content">
+            <a class="header"><%= artist.name %> </a>
+            <div class="meta">
+              <span class="date"><%= artist.bio %>  </span>
+            </div>
+          </div>
+          <div class="extra content">
+            <a>
+              <i class="users icon"></i>
+              <a href="<%= artist.url %>"><%= artist.name %>'s website </a>
+            </a>
           </div>
         </div>
       </div>
-      <img src="/images/avatar/large/elliot.jpg">
-    </div>
-    <div class="content">
-      <a class="header">Team Fu</a>
-      <div class="meta">
-        <span class="date">Created in Sep 2014</span>
-      </div>
-    </div>
-    <div class="extra content">
-      <a>
-        <i class="users icon"></i>
-        2 Members
-      </a>
-    </div>
-  </div>
-</div>
-
+    
+      <% }) %>
+      
 
 
 
