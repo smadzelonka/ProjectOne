@@ -8,38 +8,38 @@ const db = require("../models");
 // Index
 router.get("/", function (req, res) {
   // mongoose
-  db.Curator.find({}, function (err, allCurator) {
+  db.Curator.find({}, function (err, allCurators) {
     if (err) return res.send(err);
-
-    const context = { Curators: allCurators };
+    const context = { curators: allCurators };
     return res.render("curators/index", context);
   });
 });
 
 // New
 router.get("/new", function (req, res) {
-  res.render("Curators/new");
+  res.render("curators/new");
 });
 
 // Show
 router.get("/:id", function (req, res) {
   db.Curator.findById(req.params.id)
-    .populate("Curators")
-    .exec(function (err, foundAuthor) {
+    .populate("gallery")
+    .exec(function (err, foundCurator) {
       if (err) return res.send(err);
 
-      const context = { curator: foundCurator };
-      return res.render("Curators/show", context);
+      const context = { curators: foundCurator };
+      return res.render("curators/show", context);
     });
 });
 
 // Create
-router.post("/", function (req, res) {
-  db.Curator.create(req.body, function (err, createdCurator) {
-    if (err) return res.send(err);
-
+router.post("/", async function (req, res) {
+  try {
+    await db.Curator.create(req.body);
     return res.redirect("/curators");
-  });
+  } catch (err) {
+    return res.send(err);
+  }
 });
 
 // Edit
@@ -57,11 +57,9 @@ router.put("/:id", function (req, res) {
   db.Curator.findByIdAndUpdate(
     req.params.id,
     {
-
       $set: {
         ...req.body,
       },
-
     },
 
     { new: true },
@@ -73,20 +71,14 @@ router.put("/:id", function (req, res) {
 });
 
 // Delete
-
-router.delete("/:id", function (req, res) {
-  db.Curator.findByIdAndDelete(req.params.id, function (err, deletedCurator) {
-    if (err) return res.send(err);
-
-    db.Curator.remove(
-      { curator: deletedCurator._id },
-      function (err, foundArtist) {
-         foundArtist.artists.remove(deletedCurator);
-          foundArtist.save();
-          return res.redirect("/curators")
-      },
-    );
-  });
+router.delete("/:id", async function (req, res) {
+  try {
+    const deletedCurator = await db.Curator.findByIdAndDelete(req.params.id);
+    await db.Curator.remove({ curator: deletedCurator._id });
+    return res.redirect("/curators");
+  } catch (err) {
+    return res.send(err);
+  }
 });
 
 /* export */

@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+}
+
+.deleteButton {
+  background-color: transparent;
+  border: none;
+}
+
+.loginContainer {
+  position: relative;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  /* max-width: 80%; */
+}

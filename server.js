@@ -16,7 +16,6 @@ app.set("view engine", "ejs");
 // Middleware
 app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: true }));
-
 app.use(methodOverride("_method"));
 
 // Routes/controllers

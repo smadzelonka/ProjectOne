@@ -1,0 +1,11 @@
+<!-- Boiler plate -->
+<%- include("../partials/header") %>
+<!-- Nav Bar -->
+<%- include("../partials/nav") %>
+<!-- Body -->
+  <h1>Edit sceen curators</h1>
+<form action="/curators/<%= curator._id %>?_method=PUT" method="POST">
+  <input type="text" id="name" name="user" minlength="4" value="<%= curator.user %>"></input>
+</form>
+<!-- Boiler plate -->
+<%- include("../partials/footer") %>

@@ -3,8 +3,9 @@ const mongoose = require("mongoose");
 
 const curatorSchema = new mongoose.Schema(
   {
-    name: { type: String, required: [true, "Name Required"] },
-    gallery: { type: mongoose.Schema.Types.ObjectId, ref: "Artists" },
+    user: { type: String, required: [true, "Name Required"] },
+
+    gallery: [{ type: mongoose.Schema.Types.ObjectId, ref: "Artist" }],
   },
   {
     timestamps: true,

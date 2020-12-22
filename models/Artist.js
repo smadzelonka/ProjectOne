@@ -7,8 +7,8 @@ const artistSchema = new mongoose.Schema(
     name: { type: String, required: true },
     bio: { type: String, required: true },
     url: { type: String, required: true },
-    artwork: { type: String, required: true } /* Img url? */,
-    gallery: { type: mongoose.Schema.Types.ObjectId, ref: "Curator" },
+    artwork: { data: Buffer, contentType: String } /* Img url? */,
+    artCollection: { type: mongoose.Schema.Types.ObjectId, ref: "Curator" },
   },
   { timestamps: true },
 );
