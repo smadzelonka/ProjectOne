@@ -1,0 +1,18 @@
+<!-- Boiler plate -->
+<%- include("../partials/header") %>
+<!-- Nav Bar -->
+<%- include("../partials/nav") %>
+<!-- Body -->
+<h1>New Gallery</h1>
+<div class="newCurator">
+  <form action="/Curators" method="POST" class="ui form">
+    <div class="field">
+      <label class="ui horizontal label">Gallery</label>
+      <input type="text" name="user" placeholder="Name of Gallery">
+      <input class="ui icon button" type="submit" value="Create">
+    </div>
+  </form>
+</div>
+
+<!-- Boiler plate -->
+<%- include("../partials/footer") %>

@@ -1,0 +1,61 @@
+<!-- Boiler plate -->
+<%- include("../partials/header") %>
+<!-- Nav Bar -->
+<%- include("../partials/nav") %>
+<!-- Body -->
+
+<h1><%= curators.user %>'s show page</h1>
+    <% curators.gallery.forEach(artist => { %>
+      <a href="/artists/<%= artist._id %>"> <%= artist.name %> </a>
+    <% }) %>
+<div class="ui special cards">
+  <div class="card">
+    <div class="blurring dimmable image">
+      <div class="ui dimmer">
+        <div class="content">
+          <div class="center">
+            <div class="ui inverted button">Add Friend</div>
+          </div>
+        </div>
+      </div>
+      <img src="/images/avatar/large/elliot.jpg">
+    </div>
+    <div class="content">
+      <a class="header">Team Fu</a>
+      <div class="meta">
+        <span class="date">Created in Sep 2014</span>
+      </div>
+    </div>
+    <div class="extra content">
+      <a>
+        <i class="users icon"></i>
+        2 Members
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- Editing -->
+<a href="/curators/<%= curators._id %>/edit">Edit me</a>
+<!-- Delete -->
+  <form action="/curators/<%= curators._id %>?_method=DELETE" method="POST">
+    <div class="ui animated button"  tabindex="0">
+      <div class="visible content">
+        <input class="deleteButton" type="submit" value="Delete">
+      </div>
+    <div type="submit" class="hidden content">
+      <input class="deleteButton" type="submit" value="Delete"> <i class="trash alternate icon"></i></input>
+    </div>
+    </div>
+  </form>  
+
+<!-- Boiler plate -->
+<%- include("../partials/footer") %>
+

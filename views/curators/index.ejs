@@ -1,0 +1,23 @@
+<!-- Boiler plate -->
+<%- include("../partials/header") %>
+<!-- Nav Bar -->
+<%- include("../partials/nav") %>
+<!-- Header -->
+<h1>Curators Home page</h1>
+<!-- body -->
+      <h2>List of Galleries</h2>
+      <% if(!curators.length) { %>
+        <p>There are no Galleries available yet.</p>
+      <% } %>
+
+      <ul>
+        <% curators.forEach(curator => { %>
+        <li>
+          <a href="/curators/<%= curator._id %>"> <%= curator.user %> </a>
+        </li>
+        <% }) %>
+      </ul>
+
+
+<!-- Boiler plate -->
+<%- include("../partials/footer") %>
