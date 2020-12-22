@@ -50,7 +50,7 @@ router.post("/", function (req, res) {
       foundCurator,
     ) {
       if (err) return res.send(err);
-      foundCurator.gallery.push(createdArtist);
+      foundCurator.gallery.push(createdArtist); /* to where */
       foundCurator.save();
       return res.redirect("/artists");
     });

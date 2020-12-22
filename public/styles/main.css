@@ -2,15 +2,48 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Lora', serif;
 }
 
 body {
-  text-align: center;
+  text-align: center;  
+  background-color: #e8e8e8;
+}
+
+h1 {
+ color:#3a4b66;
+ font-family: 'Lora', serif;
+ 
+}
+h2{
+  color:#3a4b66;
+  font-family: 'Lora', serif;
+
+}
+.artistForm {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .deleteButton {
   background-color: transparent;
   border: none;
+  
+}
+.newCurator {
+  width: 30vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+
 }
 
 .loginContainer {
