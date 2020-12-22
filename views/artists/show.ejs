@@ -4,10 +4,31 @@
 <%- include("../partials/nav") %>
 <!-- Body -->
 <h1>Artist's show page</h1>
-
-  <%= artist.name %>| 
-  <%=artist.bio%> |
-  <%=artist.url%> 
+  <div class="ui special cards">
+    <div class="card">
+      <div class="blurring dimmable image">
+        <div class="ui dimmer">
+          <div class="content">
+            <div class="center">
+              <div class="ui inverted button"><%= artist.name %></div>
+            </div>
+          </div>
+        </div>
+        <img src="<%=artist.artwork%>">
+      </div>
+      <div class="content">
+        <a class="header"><%=artist.bio%></a>
+        <div class="meta">
+          <span class="date"><%=artist.url%></span>
+        </div>
+      </div>
+      <div class="extra content">
+        <a>
+          <i class="users icon"></i>
+          <%=artist.url%> 
+        </a>
+      </div>
+    </div>
   <button><a href="/artists/<%= artist._id %>/edit">Edit</a></button>
 
   <form action="/artists/<%= artist._id %>?_method=DELETE" method="POST">

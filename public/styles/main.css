@@ -53,3 +53,6 @@ h2{
   justify-content: center;
   /* max-width: 80%; */
 }
+div {
+  align-self: center;
+}
