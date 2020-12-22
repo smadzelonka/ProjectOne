@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
 }
 
 body {
@@ -12,14 +12,12 @@ body {
 };
 
 h1 {
- color:#3a4b66;
- font-family: 'Lora', serif;
- 
+  color: #3a4b66;
+  font-family: "Lora", serif;
 }
-h2{
-  color:#3a4b66;
-  font-family: 'Lora', serif;
-
+h2 {
+  color: #3a4b66;
+  font-family: "Lora", serif;
 }
 .artistForm {
   width: 80%;
@@ -34,7 +32,6 @@ h2{
 .deleteButton {
   background-color: transparent;
   border: none;
-  
 }
 .newCurator {
   width: 30vw;
@@ -44,7 +41,6 @@ h2{
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
-
 }
 
 .loginContainer {
