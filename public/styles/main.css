@@ -6,10 +6,10 @@
 }
 
 body {
-  text-align: center;  
+  text-align: center;
   background-image: url("https://cdn.pixabay.com/photo/2015/05/03/16/05/wall-751342_960_720.jpg");
   background-size: cover;
-};
+}
 
 h1 {
   color: #3a4b66;
