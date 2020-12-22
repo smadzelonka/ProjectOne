@@ -7,8 +7,8 @@
 
 body {
   text-align: center;  
-  background-color: #e8e8e8;
-}
+  background-image: url("https://cdn.pixabay.com/photo/2015/05/03/16/05/wall-751342_960_720.jpg")
+};
 
 h1 {
  color:#3a4b66;
@@ -52,4 +52,7 @@ h2{
   align-self: center;
   justify-content: center;
   /* max-width: 80%; */
+}
+div {
+  align-self: center;
 }
