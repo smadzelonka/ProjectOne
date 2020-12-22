@@ -4,9 +4,15 @@
 <%- include("../partials/nav") %>
 <!-- Body -->
 <h1>Curator New page</h1>
-  <form action="/Curators" method="POST">
-    <input type="text" name="user" placeholder="Curator Name" />
-    <input type="submit" value="Create">
+<div class="newCurator">
+  <form action="/Curators" method="POST" class="ui form">
+    <div class="field">
+      <label class="ui horizontal label">Curator</label>
+      <input type="text" name="user" placeholder="Name of Curator">
+      <input class="ui icon button" type="submit" value="Create">
+    </div>
   </form>
+</div>
+
 <!-- Boiler plate -->
 <%- include("../partials/footer") %>

@@ -7,10 +7,28 @@
 body {
   text-align: center;
 }
+.artistForm {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
 
 .deleteButton {
   background-color: transparent;
   border: none;
+}
+.newCurator {
+  width: 30vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .loginContainer {
