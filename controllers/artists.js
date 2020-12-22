@@ -48,7 +48,7 @@ router.post("/", function (req, res) {
     db.Curator.findById(createdArtist.artCollection).exec(function (
       err,
       foundCurator,
-    ) /* whats being uploaded */ {
+    ) {
       if (err) return res.send(err);
       foundCurator.gallery.push(createdArtist); /* to where */
       foundCurator.save();
