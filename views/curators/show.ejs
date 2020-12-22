@@ -4,23 +4,20 @@
 <%- include("../partials/nav") %>
 <!-- Body -->
 <h1>Gallery Name</h1>
-
-    <div class="ui card">
+<%=curators.gallery.forEach(artist => { %>
+   <div class="ui card"> 
       <div class="image">
         <!-- image artwork -->
         <img src="/images/avatar2/large/kristy.png"> 
       </div>
       <div class="content">
-        <a class="header"> <% curators.gallery.forEach(artist => { %>
-          <a href="/artists/<%= artist._id %>"> <%= artist.name %> </a>
-        <% }) %></a>
+        <a class="header"> </a>
+        </a>
         <div class="meta">
-          <span class="date">nothing yet</span>
+          <span class="date"></span>
         </div>
         <div class="description">
-          <% curators.gallery.forEach(artist => { %>
-            <span class="bio"><%= artist.bio %></span>
-          <% }) %></a>
+          </a>
         </div>
       </div>
       <div class="extra content">
@@ -30,7 +27,7 @@
         </a>
       </div>
     </div> 
-    
+  <% }) %>
 
 <!-- Editing -->
 <a href="/curators/<%= curators._id %>/edit">Edit me</a>
