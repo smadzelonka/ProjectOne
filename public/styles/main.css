@@ -7,7 +7,7 @@
 
 body {
   text-align: center;
-  background-image: url("https://cdn.pixabay.com/photo/2015/05/03/16/05/wall-751342_960_720.jpg");
+  background-image: url(../imgs/wall-751342_960_720.webp);
   background-size: cover;
 }
 
@@ -19,6 +19,18 @@ h2 {
   color: #3a4b66;
   font-family: "Lora", serif;
 }
+
+/* nav Bar */
+.navBar {
+  margin: 1% auto;
+}
+/* Curator Show page */
+
+img {
+  max-height: 362px;
+  min-height: 362px;
+  min-width: 290px;
+}
 .artistForm {
   width: 80%;
   display: flex;
@@ -27,6 +39,32 @@ h2 {
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
+}
+
+.artistEdit {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+.ui.button {
+  margin: 1%;
+}
+
+.showContainer {
+  padding: 3 rem;
+  margin: 0% auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.showContainerDiv {
+  margin: 0% auto;
+  display: flex;
+  flex-direction: row;
 }
 
 .deleteButton {
@@ -53,4 +91,3 @@ h2 {
 div {
   align-self: center;
 }
-
