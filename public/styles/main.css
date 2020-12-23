@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Lora", serif;
-  color: whitesmoke;
+  color: black;
 }
 
 body {
@@ -12,16 +12,16 @@ body {
   background-size: cover;
 }
 
-a{
+a {
   color: whitesmoke;
 }
 
 h1 {
-  color:whitesmoke;
+  color: whitesmoke;
   font-family: "Lora", serif;
 }
 h2 {
-  color:whitesmoke;
+  color: whitesmoke;
   font-family: "Lora", serif;
 }
 
@@ -114,7 +114,7 @@ div {
   margin: 0 auto;
 }
 .artistLink {
-font-size: 20px
+  font-size: 20px;
 }
 
 .makeChangesButton {
