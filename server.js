@@ -12,7 +12,7 @@ const app = express();
 require("dotenv").config();
 
 // Configuration
-const PORT = /* process.env.PORT || */ 4001; 
+const PORT = process.env.PORT || 4001;
 
 app.set("view engine", "ejs");
 
@@ -27,7 +27,7 @@ app.use(
     store: new MongoStore({
       url: process.env.MONGODB_URI,
     }),
-    secret: process.env.SECRET,
+    secret: "whatwhatinthewhat",
     resave: false,
     saveUninitialized: false,
     cookie: {

@@ -33,10 +33,7 @@ router.post("/", async function (req, res) {
   try {
     const foundUser = await db.Username.findOne({ email: req.body.email });
     if (!foundUser) return res.redirect("/register");
-    /* Now we are on this */
-    console.log("req.body email", req.body.email);
-    console.log("found", foundUser.password);
-    const match = await bcrypt.compare(req.body.email, foundUser.password);
+    const match = await bcrypt.compare(req.body.password, foundUser.password);
     if (!match) return res.send("Password or Email Invalid");
 
     // create our user on the session
@@ -45,7 +42,7 @@ router.post("/", async function (req, res) {
       username: foundUser.username,
     };
 
-    res.redirect("/");
+    res.redirect("/curators");
   } catch (err) {
     return res.send(err);
   }
