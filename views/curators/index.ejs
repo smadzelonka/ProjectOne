@@ -3,7 +3,7 @@
 <!-- Nav Bar -->
 <%- include("../partials/nav") %>
 <!-- Header -->
-<h1>Users home page</h1>
+<h1 class= "mainheader">Users home page</h1>
 <!-- body -->
       <h2>List of Galleries</h2>
       <% if(!curators.length) { %>
@@ -11,6 +11,13 @@
       <% } %>
 <div class="curatorIndex">
         <% curators.forEach(curator => { %>
+
+        <li class="galleries">
+          <a href="/curators/<%= curator._id %>"> <%= curator.user %> </a>
+        </li>
+        
+        <% }) %>
+      </ul>
 
 <div class="ui list">
   <div class="item">

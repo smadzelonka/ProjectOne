@@ -20,6 +20,12 @@ h1 {
   color: whitesmoke;
   font-family: "Lora", serif;
 }
+
+.mainheader {
+  font-size: 40px;
+  text-shadow: 2px 2px grey;
+}
+
 h2 {
   color: whitesmoke;
   font-family: "Lora", serif;
@@ -145,4 +151,8 @@ div {
 /* homepage */
 .welcomeH1 {
   margin: 5% auto;
+}
+
+.galleries {
+  font-size: 20px;
 }

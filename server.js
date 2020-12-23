@@ -25,7 +25,7 @@ app.use(methodOverride("_method"));
 app.use(
   session({
     store: new MongoStore({
-      url: process.env.MONGODB_URI,
+      url: "mongodb://localhost:27017/curate" 
     }),
     secret: process.env.SECRET,
     resave: false,
