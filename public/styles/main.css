@@ -7,7 +7,7 @@
 
 body {
   text-align: center;
-  background-image: url("https://cdn.pixabay.com/photo/2015/05/03/16/05/wall-751342_960_720.jpg");
+  background-image: url(../imgs/wall-751342_960_720.webp);
   background-size: cover;
 }
 
@@ -19,6 +19,12 @@ h2 {
   color: #3a4b66;
   font-family: "Lora", serif;
 }
+
+/* nav Bar */
+.navBar {
+  margin: 1% auto;
+}
+/* Curator Show page */
 
 img {
   max-height: 362px;
@@ -33,6 +39,9 @@ img {
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
+}
+.ui.button {
+  margin: 1%;
 }
 
 .showContainer {

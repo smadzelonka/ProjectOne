@@ -8,7 +8,7 @@
 <div class="showContainer">
 
   <% curators.gallery.forEach(artist => { %>
-    <section class="showContainerDiv">
+    <section class="showContainerDiv four wide column">
     <div class="ui special cards">
       <div class="card">
         <div class="blurring dimmable image">
@@ -40,7 +40,13 @@
     
   </div>
   <!-- Editing -->
-  <a href="/curators/<%= curators._id %>/edit">Edit me</a>
+  <div class="ui animated fade button editButt" tabindex="0">
+  <div class="visible content">Need to edit?</div>
+  <div class="hidden content">
+    <a href="/curators/<%= curators._id %>/edit">Edit me</a>
+  </div>
+</div>
+  
   <!-- Delete -->
   <form action="/curators/<%= curators._id %>?_method=DELETE" method="POST">
     <div class="ui animated button"  tabindex="0">
