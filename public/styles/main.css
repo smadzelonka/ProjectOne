@@ -45,6 +45,11 @@ h2 {
 .ui.menu .item {
   color: whitesmoke;
 }
+
+.logout {
+  background: transparent;
+  border: none;
+}
 /* Curator Show page */
 
 img {
