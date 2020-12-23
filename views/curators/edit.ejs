@@ -3,9 +3,16 @@
 <!-- Nav Bar -->
 <%- include("../partials/nav") %>
 <!-- Body -->
-  <h1>Edit screen curators</h1>
+  <h1 class= "mainheader">Edit screen curators</h1>
 <form action="/curators/<%= curator._id %>?_method=PUT" method="POST">
-  <input type="text" id="name" name="user" minlength="4" value="<%= curator.user %>"></input>
+    <div class="field">
+    <label>Curator's Name</label>
+    <input type="text" name="user" value="<%= curator.user %>">
+  </div>
+  <!-- Button -->
+<button class="ui button" type="submit">
+  submit
+</button>
 </form>
 <!-- Boiler plate -->
 <%- include("../partials/footer") %>

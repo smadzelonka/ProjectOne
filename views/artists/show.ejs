@@ -3,23 +3,34 @@
 <!-- Nav Bar -->
 <%- include("../partials/nav") %>
 <!-- Body -->
-<h1>Artist's show page</h1>
-  <%= artist.name %>| 
-  <%=artist.bio%> |
-  <a href="<%= artist.url %>">Website</a>
-  <button><a href="/artists/<%= artist._id %>/edit">Edit</a></button>
+<h1 class= "mainheader">More on <%=artist.name%></h1>
+<a class="artistLink" href="<%= artist.url %>">Website</a>
+
+<p class="bio"><%= artist.name %> | 
+ <%=artist.bio%> | </p>
+  
+
+
+<div class= "makeChangesButton">
+ <div class= "ui animated fade button" tabindex="0">
+    <div class="visible content">Make Changes</div>
+    <div class="hidden content">
+      <a href="/artists/<%= artist._id %>/edit">Edit</a>
+    </div>
+  </div>
+</div>
+
 
   <form action="/artists/<%= artist._id %>?_method=DELETE" method="POST">
     <div class="ui animated button"  tabindex="0">
   <div class="visible content">
     <!-- Delete -->
-    <input class="deleteButton" type="submit" value="Delete">
+    <input class="deleteButton" type="submit" value="Remove">
   </div>
   <div type="submit" class="hidden content">
     <input class="deleteButton" type="submit" value="Delete"> <i class="trash alternate icon"></i></input>
   </div>
 </div>
-
   </form>  
 <!-- Boiler plate -->
 <%- include("../partials/footer") %>

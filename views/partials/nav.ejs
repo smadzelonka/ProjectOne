@@ -1,7 +1,41 @@
-<nav>
-  <a href="/">Home</a>|
-  <a href="/curators">Curator</a>|
-  <a href="/artists">Artist</a>|
-  <a href="/curators/new">Create a Gallery</a>|
-  <a href="/artists/new">Artist New</a>
-</nav>
+<nav class="navBar">
+
+  <div class="ui attached stackable menu">
+  <div class="ui container">
+      <a class="item" href="/"><i class="home icon"></i>Home </a>
+    </a>
+      <a href="/curators" class="item"><i class="user outline icon"></i>Your Galleries</a>
+    </a>
+      <a href="/artists" class="item"><i class="eye icon"></i>Artist </a>
+    </a>
+      <a href="/curators/new" class="item"><i class="hand spock outline icon"></i>Create a Gallery </a>
+    </a>
+      <a href="/artists/new" class="item"><i class="plus icon"></i>Artist New</a>
+    </a>
+    <div class="right item">
+      <!-- make this a butttion to destory cookies -->
+      <form action="/logout?_method=DELETE" method="POST">
+      <a href="/logout"><i class="frown icon"></i>
+          <input class="logout" type="submit" value="logout">
+        </div>
+      </form>
+      </div>
+      </a>
+    </div>
+    </div>
+  </div>
+</div>
+</nav>  
+
+<!-- <div class="ui simple dropdown item">
+      More
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item"><i class="edit icon"></i> Edit Profile</a>
+        <a class="item"><i class="globe icon"></i> Choose Language</a>
+        <a class="item"><i class="settings icon"></i> Account Settings</a>
+      </div>     
+      <div class="right item">
+      <div class="ui input"><input type="text" placeholder="Search..."></div>
+    </div>-->
+

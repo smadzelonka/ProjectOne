@@ -3,21 +3,22 @@
 <!-- Nav Bar -->
 <%- include("../partials/nav") %>
 <!-- Header -->
-<h1>Users home page</h1>
+<h1 class= "mainheader">Users home page</h1>
 <!-- body -->
-      <h2>List of Galleries</h2>
+      <h2 class= "lists">List of Galleries</h2>
       <% if(!curators.length) { %>
         <p>There are no Galleries available yet.</p>
       <% } %>
-
-      <ul>
+<div class="curatorIndex">
         <% curators.forEach(curator => { %>
-        <li>
+
+        <div class= "lists">
           <a href="/curators/<%= curator._id %>"> <%= curator.user %> </a>
-        </li>
+        </div>
+        
         <% }) %>
       </ul>
-
+</div>
 
 <!-- Boiler plate -->
 <%- include("../partials/footer") %>

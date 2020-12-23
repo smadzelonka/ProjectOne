@@ -1,55 +1,55 @@
+/* nav Bar */
+@import "./components/nav.css";
+
+/* Curator */
+@import "./components/curator.css";
+
+/* register page */
+@import "./components/regis.css";
+
+/* login screen */
+@import "./components/home.css";
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Lora", serif;
+  color: black;
 }
 
 body {
   text-align: center;
-  background-image: url("https://cdn.pixabay.com/photo/2015/05/03/16/05/wall-751342_960_720.jpg");
+  background-image: url(../imgs/wall-751342_960_720.webp);
   background-size: cover;
 }
 
+a {
+  color: whitesmoke;
+}
+
 h1 {
-  color: #3a4b66;
+  color: whitesmoke;
   font-family: "Lora", serif;
+}
+
+.mainheader {
+  font-size: 40px;
+  text-shadow: 2px 2px black;
 }
 h2 {
-  color: #3a4b66;
+  color: whitesmoke;
   font-family: "Lora", serif;
 }
-.artistForm {
-  width: 80%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 auto;
-}
 
-.deleteButton {
-  background-color: transparent;
-  border: none;
-}
-.newCurator {
-  width: 30vw;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 auto;
-}
-
-.loginContainer {
-  position: relative;
-  display: flex;
-  align-self: center;
-  justify-content: center;
-  /* max-width: 80%; */
-}
 div {
   align-self: center;
+}
+
+.galleries {
+  font-size: 20px;
+}
+.lists {
+  text-shadow: 2px 2px grey;
+  font-size :20px;
+
 }

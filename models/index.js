@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
-
+require("dotenv").config();
 /* === Connect === */
-const dbUrl = "mongodb://localhost:27017/curate";
+const dbUrl = process.env.MONGODB_URI;
+/*  "mongodb://localhost:27017/curate" */ // connnect
 
-// connnect
 mongoose
   .connect(dbUrl, {
     useNewUrlParser: true,
@@ -28,4 +28,5 @@ mongoose.connection.on("disconnected", function () {
 module.exports = {
   Artist: require("./Artist"),
   Curator: require("./Curator"),
+  Username: require("./Auth"),
 };
