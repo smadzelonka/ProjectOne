@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const artistSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
-    bio: { type: String, required: true },
+    bio: { type: String, required: true, maxlength: 40 },
     url: { type: String, required: true },
     artwork: {
       type: String /* data: Buffer, contentType: String */,
