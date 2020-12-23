@@ -34,7 +34,17 @@ h2 {
 
 /* nav Bar */
 .navBar {
-  margin: 1% auto;
+  margin: 0 auto;
+}
+
+.ui.attached.menu:not(.tabular) {
+  border: 1px solid black;
+}
+.ui.menu {
+  background: transparent;
+}
+.ui.menu .item {
+  color: whitesmoke;
 }
 /* Curator Show page */
 
@@ -127,6 +137,23 @@ div {
 .makeChangesButton {
   padding: 1%;
 }
+
+/* curator index */
+.curatorIndex {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* homepage */
+.welcomeH1 {
+  margin: 5% auto;
+}
+
 .galleries {
   font-size: 20px;
 }
