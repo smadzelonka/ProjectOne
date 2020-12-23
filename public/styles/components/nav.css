@@ -1,0 +1,18 @@
+.navBar {
+  margin: 0 auto;
+}
+
+.ui.attached.menu:not(.tabular) {
+  border: 1px solid black;
+}
+.ui.menu {
+  background: transparent;
+}
+.ui.menu .item {
+  color: whitesmoke;
+}
+
+.logout {
+  background: transparent;
+  border: none;
+}

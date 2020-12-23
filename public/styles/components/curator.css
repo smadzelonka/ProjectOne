@@ -1,0 +1,75 @@
+img {
+  max-height: 362px;
+  min-height: 362px;
+  min-width: 290px;
+}
+.artistForm {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.artistEdit {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+.ui.button {
+  margin: 1%;
+}
+
+.showContainer {
+  padding: 3 rem;
+  margin: 0% auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.showContainerDiv {
+  margin: 0% auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.deleteButton {
+  background-color: transparent;
+  border: none;
+}
+.newCurator {
+  width: 30vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.loginContainer {
+  position: relative;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  /* max-width: 80%; */
+}
+.mainheader {
+  font-size: 40px;
+  text-shadow: 2px 2px grey;
+}
+.curatorIndex {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
