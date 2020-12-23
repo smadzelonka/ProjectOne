@@ -61,7 +61,6 @@ router.post("/", function (req, res) {
 router.get("/:id/edit", function (req, res) {
   db.Artist.findById(req.params.id, function (err, foundArtist) {
     if (err) return res.send(err);
-
     const context = { artist: foundArtist };
     return res.render("artists/edit", context);
   });
