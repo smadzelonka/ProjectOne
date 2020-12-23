@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Lora", serif;
+  color: whitesmoke;
 }
 
 body {
@@ -11,12 +12,16 @@ body {
   background-size: cover;
 }
 
+a{
+  color: whitesmoke;
+}
+
 h1 {
-  color: #3a4b66;
+  color:whitesmoke;
   font-family: "Lora", serif;
 }
 h2 {
-  color: #3a4b66;
+  color:whitesmoke;
   font-family: "Lora", serif;
 }
 
@@ -88,6 +93,21 @@ img {
   justify-content: center;
   /* max-width: 80%; */
 }
+
 div {
   align-self: center;
+}
+
+.bio {
+  text-align: center;
+  width: 80%;
+  font-size: 25px;
+  margin: 0 auto;
+}
+.artistLink {
+font-size: 20px
+}
+
+.makeChangesButton {
+  padding: 1%;
 }
