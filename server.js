@@ -61,7 +61,8 @@ const authRequired = (req, res, next) => {
 // Routes/controllers
 // home
 app.get("/", function (req, res) {
-  res.render("home");
+  const context = { user: req.session.currentUser };
+  res.render("home", context);
 });
 
 // Auth controller
