@@ -10,8 +10,7 @@
   <ul>
     <% artists.forEach(artist => { %>
     <li>
-      <a href="/artists/<%= artist._id %>"> <%= artist.name %> </a>|
-      <a href="<%= artist.url %>">Link here</a>
+      <h2><a href="/artists/<%= artist._id %>"> <%= artist.name %> </a></h2>
     </li>
     <% }) %>
   </ul>
