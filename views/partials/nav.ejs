@@ -13,7 +13,14 @@
       <a href="/artists/new" class="item"><i class="plus icon"></i>Artist New</a>
     </a>
     <div class="right item">
-      <a href="/logout"><i class="frown icon"></i> logout</a>
+      <!-- make this a butttion to destory cookies -->
+      <form action="/logout?_method=DELETE" method="POST">
+      <a href="/logout"><i class="frown icon"></i>
+          <input class="logout" type="submit" value="logout">
+        </div>
+      </form>
+      </div>
+      </a>
     </div>
     </div>
   </div>
