@@ -25,9 +25,9 @@ app.use(methodOverride("_method"));
 app.use(
   session({
     store: new MongoStore({
-      url: "mongodb://localhost:27017/curate",
+      url: process.env.MONGODB_URI,
     }),
-    secret: "what what in the what",
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -39,7 +39,7 @@ app.use(
 // logger
 app.use(function (req, res, next) {
   req.session.test = "Test Property";
-  console.log(req.session);
+  // console.log(req.session);
   next();
 });
 
@@ -53,6 +53,7 @@ const authRequired = (req, res, next) => {
   if (req.session.currentUser) {
     next();
   } else {
+    console.log("authrequired");
     res.redirect("/");
   }
 };
