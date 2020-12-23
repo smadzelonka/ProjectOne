@@ -17,7 +17,6 @@ router.post("/register", async function (req, res) {
     const hash = await bcrypt.hash(req.body.password, salt);
     req.body.password = hash;
     const newUser = await db.Username.create(req.body);
-    console.log("made");
     return res.redirect("/");
   } catch (err) {
     return res.send(err);
