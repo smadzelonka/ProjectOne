@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Lora", serif;
+  color: whitesmoke;
 }
 
 body {
@@ -11,12 +12,16 @@ body {
   background-size: cover;
 }
 
+a{
+  color: whitesmoke;
+}
+
 h1 {
-  color: #4183c4;
+  color:whitesmoke;
   font-family: "Lora", serif;
 }
 h2 {
-  color:#4183c4;
+  color:whitesmoke;
   font-family: "Lora", serif;
 }
 .artistForm {
@@ -51,8 +56,21 @@ h2 {
   /* max-width: 80%; */
 }
 
-
 div {
   align-self: center;
 }
 
+
+.bio {
+  text-align: center;
+  width: 80%;
+  font-size: 25px;
+  margin: 0 auto;
+}
+.artistLink {
+font-size: 20px
+}
+
+.makeChangesButton {
+  padding: 1%;
+}
