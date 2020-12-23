@@ -98,6 +98,15 @@ div {
   align-self: center;
 }
 
+/* login screen */
+.login {
+  color: white;
+}
+.regLink {
+  color: grey;
+}
+
+/* register page */
 .bio {
   text-align: center;
   width: 80%;

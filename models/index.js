@@ -30,4 +30,5 @@ mongoose.connection.on("disconnected", function () {
 module.exports = {
   Artist: require("./Artist"),
   Curator: require("./Curator"),
+  Username: require("./Auth"),
 };
