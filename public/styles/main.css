@@ -32,6 +32,10 @@ h1 {
   font-family: "Lora", serif;
 }
 
+.mainheader {
+  font-size: 40px;
+  text-shadow: 2px 2px black;
+}
 h2 {
   color: whitesmoke;
   font-family: "Lora", serif;
@@ -43,4 +47,9 @@ div {
 
 .galleries {
   font-size: 20px;
+}
+.lists {
+  text-shadow: 2px 2px grey;
+  font-size :20px;
+
 }
