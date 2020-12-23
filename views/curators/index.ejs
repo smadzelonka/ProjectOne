@@ -3,7 +3,7 @@
 <!-- Nav Bar -->
 <%- include("../partials/nav") %>
 <!-- Header -->
-<h1>Curators Home page</h1>
+<h1>Users home page</h1>
 <!-- body -->
       <h2>List of Galleries</h2>
       <% if(!curators.length) { %>
@@ -15,6 +15,7 @@
         <li>
           <a href="/curators/<%= curator._id %>"> <%= curator.user %> </a>
         </li>
+        
         <% }) %>
       </ul>
 
