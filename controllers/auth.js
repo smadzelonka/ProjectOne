@@ -10,18 +10,9 @@ router.get("/register", function (req, res) {
 
 //reg post
 router.post("/register", async function (req, res) {
-  // check if user already exists
-  // if exists -> error and send them to login
-  // if not -> create a user with the given info
-  // redirect to login
-
   try {
-    // { $or: [{email: req.body.email},{username: req.body.username}]}
-
     const foundUser = await db.Username.findOne({ email: req.body.email });
-
     if (foundUser) return res.redirect("/");
-
     const salt = await bcrypt.genSalt(10);
     const hash = await bcrypt.hash(req.body.password, salt);
     req.body.password = hash;
@@ -40,13 +31,6 @@ router.get("/", function (req, res) {
 
 // log post
 router.post("/", async function (req, res) {
-  // check if the user exists
-  // if the user exists
-  // validate the user if passwords match -> login
-  // if not match send error
-  // if not
-  // redirect to register
-
   try {
     const foundUser = await db.Username.findOne({ email: req.body.email });
 
