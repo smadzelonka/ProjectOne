@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lora", serif;
+  color: black;
+}
+
+body {
+  text-align: center;
+  background-image: url(../imgs/wall-751342_960_720.webp);
+  background-size: cover;
+}
+
+a {
+  color: whitesmoke;
+}
+
+h1 {
+  color: whitesmoke;
+  font-family: "Lora", serif;
+}
+
+h2 {
+  color: whitesmoke;
+  font-family: "Lora", serif;
+}

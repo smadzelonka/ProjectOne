@@ -12,7 +12,7 @@ const app = express();
 require("dotenv").config();
 
 // Configuration
-const PORT = process.env.PORT || 4001;
+const PORT = process.env.PORT; /* || 4001 */
 
 app.set("view engine", "ejs");
 

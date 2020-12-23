@@ -1,3 +1,14 @@
+/* nav Bar */
+@import "./components/nav.css";
+
+/* Curator */
+@import "./components/curator.css";
+
+/* register page */
+@import "./components/regis.css";
+
+/* login screen */
+@import "./components/home.css";
 * {
   margin: 0;
   padding: 0;
@@ -21,137 +32,17 @@ h1 {
   font-family: "Lora", serif;
 }
 
-
 .mainheader {
   font-size: 40px;
   text-shadow: 2px 2px black;
 }
-
 h2 {
   color: whitesmoke;
   font-family: "Lora", serif;
 }
 
-/* nav Bar */
-.navBar {
-  margin: 0 auto;
-}
-
-.ui.attached.menu:not(.tabular) {
-  border: 1px solid black;
-}
-.ui.menu {
-  background: transparent;
-}
-.ui.menu .item {
-  color: whitesmoke;
-}
-/* Curator Show page */
-
-img {
-  max-height: 362px;
-  min-height: 362px;
-  min-width: 290px;
-}
-.artistForm {
-  width: 80%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 auto;
-}
-
-.artistEdit {
-  width: 80%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 auto;
-}
-.ui.button {
-  margin: 1%;
-}
-
-.showContainer {
-  padding: 3 rem;
-  margin: 0% auto;
-  display: flex;
-  flex-direction: row;
-}
-
-.showContainerDiv {
-  margin: 0% auto;
-  display: flex;
-  flex-direction: row;
-}
-
-.deleteButton {
-  background-color: transparent;
-  border: none;
-}
-.newCurator {
-  width: 30vw;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 auto;
-}
-
-.loginContainer {
-  position: relative;
-  display: flex;
-  align-self: center;
-  justify-content: center;
-  /* max-width: 80%; */
-}
-
 div {
   align-self: center;
-}
-
-/* login screen */
-.login {
-  color: white;
-}
-.regLink {
-  color: grey;
-}
-
-/* register page */
-.bio {
-  text-align: center;
-  width: 80%;
-  font-size: 25px;
-  margin: 0 auto;
-}
-.artistLink {
-  font-size: 20px;
-}
-
-.makeChangesButton {
-  padding: 1%;
-}
-
-/* curator index */
-.curatorIndex {
-  width: 80%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 auto;
-}
-
-/* homepage */
-.welcomeH1 {
-  margin: 5% auto;
 }
 
 .galleries {
