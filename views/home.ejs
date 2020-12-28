@@ -13,6 +13,8 @@
       <a href="/artists/new" class="item"><i class="plus icon"></i>Artist New</a>
     </a>
     <div class="right item">
+
+<% if(user){ %>
       <!-- make this a butttion to destory cookies -->
       <form action="/logout?_method=DELETE" method="POST">
       <a href="/logout"><i class="frown icon"></i>
@@ -21,11 +23,24 @@
       </form>
       </div>
       </a>
-    </div>
-    </div>
+<%    }else { %>
+
+  <a href="/" onclick="signOut();">Google Sign out</a>
+  <script>
+    function signOut() {
+    const auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+    }
+  </script>
+  <% } %>
   </div>
 </div>
-</nav>  
+</nav>
+
+
+
 
 <!-- body -->
 <div class="welcomeH1">
@@ -72,7 +87,31 @@
           </div>
       <!-- this is where google auth will go -->
       <div class="g-signin2 ui big button" data-onsuccess="onSignIn"></div>
-            <!-- <a href="/auth/google" class="ui big button" role="button">Google sign in</a> -->
+      <script>
+        function onSignIn(googleUser) {
+          const profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+            gapi.auth2.getAuthInstance();
+          console.log(GoogleAuth.isSignedIn.get())
+
+
+
+            /* new  */
+            function onSignIn(googleUser) {
+            var id_token = googleUser.getAuthResponse().id_token;
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', "http://localhost:4001/");
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onload = function() {
+            console.log('Signed in as: ' + xhr.responseText);
+            };
+            xhr.send('idtoken=' + id_token);
+            }
+        }
+      </script>
         </div>
       </div>
       <div class="ui vertical divider">
