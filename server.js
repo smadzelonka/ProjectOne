@@ -4,14 +4,12 @@ const methodOverride = require("method-override");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const { OAuth2Client } = require("google-auth-library");
-/* new attempt at google auth */
-// const passport = require("passport");
-// const GoogleStrategy = require("passport-google-oauth20").Strategy;
-// const findOrCreate = require("mongoose-findorcreate");
+const passport = require("passport");
 
 // internal modules
 const controllers = require("./controllers");
 const { Username } = require("./models");
+const { db } = require("./models/Auth");
 
 // instanced modules
 const app = express();
@@ -42,6 +40,9 @@ app.use(
   }),
 );
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 // logger
 app.use(function (req, res, next) {
   req.session.test = "Test Property";
@@ -56,7 +57,7 @@ app.use(function (req, res, next) {
 });
 
 const authRequired = (req, res, next) => {
-  if (req.session.currentUser) {
+  if (req.session.currentUser || req.user) {
     next();
   } else {
     console.log("authrequired");

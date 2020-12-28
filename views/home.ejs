@@ -86,32 +86,11 @@
           <a  class="regLink" href="/register">Register</a>
           </div>
       <!-- this is where google auth will go -->
-      <div class="g-signin2 ui big button" data-onsuccess="onSignIn"></div>
-      <script>
-        function onSignIn(googleUser) {
-          const profile = googleUser.getBasicProfile();
-            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-            console.log('Name: ' + profile.getName());
-            console.log('Image URL: ' + profile.getImageUrl());
-            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-            gapi.auth2.getAuthInstance();
-          console.log(GoogleAuth.isSignedIn.get())
-
-
-
-            /* new  */
-            function onSignIn(googleUser) {
-            var id_token = googleUser.getAuthResponse().id_token;
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', "http://localhost:4001/");
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhr.onload = function() {
-            console.log('Signed in as: ' + xhr.responseText);
-            };
-            xhr.send('idtoken=' + id_token);
-            }
-        }
-      </script>
+      <div class="ui big button">
+      <a href="/auth/google">Sign In with Google</a>
+    </div>
+      <!-- <div class="g-signin2 ui big button" data-onsuccess="onSignIn"></div> -->
+       <!-- include("partials/components/googleSignin")   -->
         </div>
       </div>
       <div class="ui vertical divider">

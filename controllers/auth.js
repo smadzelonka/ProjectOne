@@ -2,6 +2,74 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const db = require("../models");
+/* google */
+const passport = require("passport");
+const GoogleStrategy = require("passport-google-oauth20"); /* .Strategy */
+const { Username } = require("../models");
+
+require("dotenv").config();
+/* net ninja youtube, google docs and passport docs */
+
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
+passport.deserializeUser((id, done) => {
+  db.Username.findById(id).then((user) => {
+    done(null, user.id);
+  });
+});
+passport.use(
+  new GoogleStrategy(
+    {
+      callbackURL: "http://localhost:4001/auth/google/artshow",
+      clientID: process.env.CLIENT_ID,
+      clientSecret: process.env.CLIENT_SECRET,
+    },
+    (accessToken, refreshToken, profile, done) => {
+      db.Username.findOne({ googleId: profile.id }).then((currentUser) => {
+        if (currentUser) {
+          console.log("user is ", currentUser);
+          done(null, currentUser);
+        } else {
+          new db.Username({
+            username: profile.displayName,
+            googleId: profile.id,
+            email: profile.email,
+          })
+            .save()
+            .then((newUser) => {
+              console.log("new user created" + newUser);
+              done(null, newUser);
+            });
+        }
+      });
+    },
+  ),
+);
+
+// GET /auth/google
+router.get(
+  "/auth/google",
+  passport.authenticate("google", {
+    scope: [
+      "https://www.googleapis.com/auth/plus.login",
+      "https://www.googleapis.com/auth/userinfo.profile",
+    ],
+  }),
+);
+
+// GET /auth/google/callback
+router.get(
+  "/auth/google/artshow",
+  passport.authenticate("google", { failureRedirect: "/login" }),
+  function (req, res) {
+    // res.send(req.user);
+    res.redirect("/");
+  },
+);
+
+/* ============================================= */
 
 // reg get
 router.get("/register", function (req, res) {
