@@ -73,3 +73,7 @@ img {
   justify-content: center;
   margin: 0 auto;
 }
+
+.ui.cards {
+  justify-content: center;
+}

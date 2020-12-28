@@ -5,11 +5,10 @@
 <!-- Body -->
 <h1 class ="mainheader"><%= curators.user %></h1>
 
-<div class="showContainer">
-
+<div class="showContainer ui grid">
   <% curators.gallery.forEach(artist => { %>
-    <section class="showContainerDiv four wide column">
-    <div class="ui special cards">
+    <section class="showContainerDiv five wide column">
+    <div class="ui special cards column">
       <div class="card">
         <div class="blurring dimmable image">
           <div class="ui dimmer <!-- special cards -->">
@@ -22,7 +21,7 @@
           <img src="<%= artist.artwork %>">
         </div>
         <div class="content">
-          <a class="header"><%= artist.name %> </a>
+          <a class="header" href="/artists/<%= artist._id %>"><%= artist.name %> </a>
           <div class="meta">
             <span class="date"><%= artist.bio %>  </span>
           </div>
@@ -36,7 +35,9 @@
       </div>
     </div>
     </section>
-    <% }) %></div>
+    <% }) %>
+</div>
+</div>
     
   </div>
   <!-- Editing -->

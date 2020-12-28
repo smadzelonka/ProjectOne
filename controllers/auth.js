@@ -8,7 +8,11 @@ const GoogleStrategy = require("passport-google-oauth20"); /* .Strategy */
 const { Username } = require("../models");
 
 require("dotenv").config();
-/* net ninja youtube, google docs and passport docs */
+/* 
+Help with google and passport was threw ....
+https://www.youtube.com/watch?v=5VHBy2PjxKs&list=PL4cUxeGkcC9jdm7QX143aMLAqyM-jTZ2x&index=18&ab_channel=TheNetNinja
+net ninja youtube, google docs and passport docs 
+*/
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
