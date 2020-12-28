@@ -1,9 +1,42 @@
 <!-- Boiler plate -->
 <%- include("partials/header") %>
+<!-- navbar -->
+<nav class="navBar">
+  <div class="ui attached stackable menu">
+  <div class="ui container">
+      <a href="/curators" class="item"><i class="user outline icon"></i>Your Galleries</a>
+    </a>
+      <a href="/artists" class="item"><i class="eye icon"></i>Artist </a>
+    </a>
+      <a href="/curators/new" class="item"><i class="hand spock outline icon"></i>Create a Gallery </a>
+    </a>
+      <a href="/artists/new" class="item"><i class="plus icon"></i>Artist New</a>
+    </a>
+    <div class="right item">
+      <!-- make this a butttion to destory cookies -->
+      <form action="/logout?_method=DELETE" method="POST">
+      <a href="/logout"><i class="frown icon"></i>
+          <input class="logout" type="submit" value="logout">
+        </div>
+      </form>
+      </div>
+      </a>
+    </div>
+    </div>
+  </div>
+</div>
+</nav>  
+
+<!-- body -->
 <div class="welcomeH1">
   <h1 >Home page</h1>
 </div>
-
+<% if(user) { %>
+  <h2>Welcome to the home screen.</h2>
+  <h3>Go ahead and make some gallerys and share with your friends</h3>
+  <% } else {%>
+    
+    <h1>Register for an account</h1>
   <!-- Login -->
   <container class="loginContainer">
     <div class="ui placeholder segment">
@@ -38,6 +71,8 @@
           <a  class="regLink" href="/register">Register</a>
           </div>
       <!-- this is where google auth will go -->
+      <div class="g-signin2 ui big button" data-onsuccess="onSignIn"></div>
+            <!-- <a href="/auth/google" class="ui big button" role="button">Google sign in</a> -->
         </div>
       </div>
       <div class="ui vertical divider">
@@ -46,7 +81,7 @@
     </div>
   </container>
 
-
+<% } %> 
 
 
 <!-- Boiler plate -->

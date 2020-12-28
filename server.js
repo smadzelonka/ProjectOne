@@ -3,9 +3,14 @@ const express = require("express");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
+/* new attempt at google auth */
+// const passport = require("passport");
+// const GoogleStrategy = require("passport-google-oauth20").Strategy;
+// const findOrCreate = require("mongoose-findorcreate");
 
 // internal modules
 const controllers = require("./controllers");
+const { Username } = require("./models");
 
 // instanced modules
 const app = express();
@@ -57,6 +62,23 @@ const authRequired = (req, res, next) => {
     res.redirect("/");
   }
 };
+/* Google oAuth */
+// passport.use(
+//   new GoogleStrategy(
+//     {
+//       clientID: process.env.CLIENT_ID,
+//       clientSecret: process.env.CLIENT_SECRET,
+//       callbackURL: "https://localartwork.herokuapp.com/auth/google/artshow",
+//       passReqToCallback: true,
+//     },
+//     function (request, accessToken, refreshToken, profile, done) {
+//       console.log(profile);
+//       Username.findOrCreate({ googleId: profile.id }, function (err, user) {
+//         return done(err, user);
+//       });
+//     },
+//   ),
+// );
 
 // Routes/controllers
 // home
@@ -64,6 +86,19 @@ app.get("/", function (req, res) {
   const context = { user: req.session.currentUser };
   res.render("home", context);
 });
+
+/* google auth */
+// app.get("/auth/google", (req, res) => {
+//   passport.authenticate("google", { scope: ["email", "profile"] });
+// });
+
+// app.get(
+//   "/auth/google/artshow",
+//   passport.authenticate("google", {
+//     successRedirect: "/curator",
+//     failureRedirect: "/",
+//   }),
+// );
 
 // Auth controller
 app.use("/", controllers.auth);
