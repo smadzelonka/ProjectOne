@@ -5,6 +5,22 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const { OAuth2Client } = require("google-auth-library");
 const passport = require("passport");
+/* mutler */
+// const multer = require("multer");
+// const path = require("path");
+// const storage = multer.diskStorage({
+//   destination: "./public/upload/",
+//   filename: (req, file, cd) => {
+//     cd(
+//       null,
+//       file.fieldname + "-" + Date.now() + path.extname(file.originalname),
+//     );
+//   },
+// });
+
+// const upload = multer({
+//   storage: storage,
+// }).single("myImage");
 
 // internal modules
 const controllers = require("./controllers");
@@ -71,6 +87,28 @@ app.get("/", function (req, res) {
   const context = { user: req.session.currentUser, userAuth: req.user };
   res.render("home", context);
 });
+
+/* multer */
+// app.post("/uploads", (req, res) => {
+//   db.Curator.find({}, function (err, foundCurator) {
+//     upload(req, res, (err) => {
+//       const context = {
+//         curator: foundCurator,
+//       };
+//       if (err) {
+//         res.render(
+//           "",
+//           /* context, */ {
+//             msg: err,
+//           },
+//         );
+//       } else {
+//         console.log(req.file);
+//         res.send("test");
+//       }
+//     });
+//   });
+// });
 
 // Auth controller
 app.use("/", controllers.auth);
