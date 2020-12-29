@@ -26,7 +26,9 @@ passport.deserializeUser((id, done) => {
 passport.use(
   new GoogleStrategy(
     {
-      callbackURL: "http://localhost:4001/auth/google/artshow",
+      callbackURL:
+        "http://localhost:4001/auth/google/artshow" ||
+        "https://localartwork.herokuapp.com/auth/google/artshow",
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
     },

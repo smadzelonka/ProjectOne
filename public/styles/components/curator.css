@@ -77,3 +77,8 @@ img {
 .ui.cards {
   justify-content: center;
 }
+
+.card {
+  height: 470px;
+  width: 290px;
+}
