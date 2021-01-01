@@ -5,46 +5,10 @@
   <h1 class= "mainheader">Artist New</h1>
   <!-- Farther research is needed on to proceed with two forms -->
   <!-- This was helped by traversy media via youtube -->
-  <!-- form1 -->
 
+    <!-- new Artist form  -->
+<%- include("../partials/components/newArt") %>
 
-<div class="artistForm">
-  <form action="/artists" method="POST" class="ui form">
-    <div class="field">
-      <label>Artist Name</label>
-      <input type="text" name="name" placeholder="Name of Artist">
-    </div>
-    <div class="field">
-      <label>Bio</label>
-      <input type="text" name="bio" placeholder="Bio of the artist" maxlength="25">
-    </div>
-    <div class="field">
-      <label>Url</label>
-      <input type="text" name="url" placeholder="Url of artist webpage">
-    </div>
-      <!-- until Mutler Baby sadly you be an icebox -->
-  <div class="field">
-    <label>Artwork Url</label>
-    <input type="text" name="artwork" placeholder="Url of Artwork">
-  </div>
-      <p>
-    <!-- <select name ='artCollection'>  -->
-<div class="ui form">
-  <div class="field">
-    <select name="artCollection">
-      <option default>Select an Gallery</option>
-      <% curator.forEach ( curator => { %>
-      <option value="<%= curator._id %>">
-        <%= curator.user %>
-      </option>
-      <% }) %>
-    </select>
-  </div>
-</div>
-    </p>
-    <input class="ui icon button" type="submit" value="Submit">
-  </form>
-  </div>
 
 <!-- 
 https://www.youtube.com/watch?v=9Qzmri1WaaE&ab_channel=TraversyMedia
@@ -65,13 +29,3 @@ https://www.youtube.com/watch?v=9Qzmri1WaaE&ab_channel=TraversyMedia
   
   <!-- Boiler plate -->
   <%- include("../partials/footer") %>
-
-
-
-<!-- ==========  DELETE ME =========== -->
-
-  <!--     name: { type: String, required: true },
-      bio: { type: String, required: true },
-      url: { type: String, required: true },
-      artwork: { type: String, required: true } /* Img url? */,
-      gallery: { type: mongoose.Schema.Types.ObjectId, ref: "Curator" }

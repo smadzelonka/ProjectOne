@@ -20,9 +20,10 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser((id, done) => {
   db.Username.findById(id).then((user) => {
-    done(null, user.id);
+    done(null, user);
   });
 });
+
 passport.use(
   new GoogleStrategy(
     {
@@ -31,6 +32,7 @@ passport.use(
         "http://localhost:4001/auth/google/artshow",
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
+      userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
     },
     (accessToken, refreshToken, profile, done) => {
       db.Username.findOne({ googleId: profile.id }).then((currentUser) => {
@@ -38,10 +40,11 @@ passport.use(
           console.log("user is ", currentUser);
           done(null, currentUser);
         } else {
+          // console.log(profile);
           new db.Username({
             username: profile.displayName,
             googleId: profile.id,
-            email: profile.email,
+            email: profile.emails[0].value,
           })
             .save()
             .then((newUser) => {
@@ -59,9 +62,11 @@ router.get(
   "/auth/google",
   passport.authenticate("google", {
     scope: [
-      "https://www.googleapis.com/auth/plus.login",
-      "https://www.googleapis.com/auth/userinfo.profile",
+      "openid profile email https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email",
     ],
+    /* added a bunch of scopes because i want everything
+    
+     */
   }),
 );
 
@@ -70,6 +75,7 @@ router.get(
   "/auth/google/artshow",
   passport.authenticate("google", { failureRedirect: "/login" }),
   function (req, res) {
+    /* console.log(req.user.username); */
     // res.send(req.user);
     res.redirect("/");
   },

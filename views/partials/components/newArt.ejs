@@ -1,0 +1,37 @@
+<div class="artistForm">
+  <form action="/artists" method="POST" class="ui form">
+    <div class="field">
+      <label>Artist Name</label>
+      <input type="text" name="name" placeholder="Name of Artist">
+    </div>
+    <div class="field">
+      <label>Bio</label>
+      <input type="text" name="bio" placeholder="Bio of the artist" maxlength="25">
+    </div>
+    <div class="field">
+      <label>Url</label>
+      <input type="text" name="url" placeholder="Url of artist webpage">
+    </div>
+      <!-- until Mutler Baby sadly you be an icebox -->
+  <div class="field">
+    <label>Artwork Url</label>
+    <input type="text" name="artwork" placeholder="Url of Artwork">
+  </div>
+      <p>
+
+<div class="ui form">
+  <div class="field">
+    <select name="artCollection">
+      <option default>Select an Gallery</option>
+      <% curator.forEach ( curator => { %>
+      <option value="<%= curator._id %>">
+        <%= curator.user %>
+      </option>
+      <% }) %>
+    </select>
+  </div>
+</div>
+    </p>
+    <input class="ui icon button" type="submit" value="Submit">
+  </form>
+  </div>
